@@ -1,0 +1,29 @@
+# DOVIX AI
+
+> DOVIX AI engineers production-grade AI systems, autonomous agents, and enterprise automation for healthcare, finance, retail, manufacturing, and government leaders.
+
+DOVIX AI is an enterprise AI company headquartered in Jaipur, India. We design, build, and operate frontier AI platforms — generative AI, RAG, multi-agent systems, computer vision, conversational AI, and end-to-end business automation — for global organizations.
+
+## Pages
+
+- [Home](/): Overview of DOVIX AI capabilities, services, products, and industries.
+- [About](/about): Company story, beliefs, and operating principles.
+- [Services](/services): Full catalog of AI services — generative AI, agents, ML, computer vision, automation, and more.
+- [Solutions](/solutions): Pre-architected AI playbooks and accelerators by use case.
+- [Industries](/industries): Vertical-specific AI offerings across 16 sectors.
+- [Products](/products): The Dovix Suite of AI-native enterprise software (CRM, ERP, Helpdesk, Analytics).
+- [Case Studies](/case-studies): Impact metrics and outcome-focused project summaries.
+- [Portfolio](/portfolio): Visual showcase of major AI platform deployments.
+- [Technologies](/technologies): Tech stack, model partners, and infrastructure ecosystem.
+- [AI Research](/ai-research): Whitepapers and research on reliability, evaluations, and agents.
+- [Blog](/blog): Thought leadership and engineering field notes.
+- [Careers](/careers): Open roles and culture.
+- [Contact](/contact): Reach the DOVIX AI team — info@dovix.ai · +91 91163 82399.
+- [FAQ](/faq): Frequently asked questions on engagements, pricing, security, and deployment.
+
+## Optional
+
+- [Privacy Policy](/privacy)
+- [Terms & Conditions](/terms)
+- [Cookie Policy](/cookies)
+- [Sitemap](/sitemap)
