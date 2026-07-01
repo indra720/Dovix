@@ -36,8 +36,8 @@ function Blog() {
         <div className="grid gap-6 lg:grid-cols-3">
           {posts.map((p, i) => (
             <FadeIn key={p.t} delay={i * 0.04}>
-              <Link to="/blog" className="group block h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition hover:border-white/25 hover:bg-white/[0.06]">
-                <div className="relative aspect-[16/9] overflow-hidden">
+              <Link to="/blog" className="group block h-full overflow-hidden rounded-2xl border border-white/10 bg-white/3 transition hover:border-white/25 hover:bg-white/6">
+                <div className="relative aspect-16/9 overflow-hidden">
                   <img
                     src={p.image}
                     alt={p.t}
