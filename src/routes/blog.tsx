@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, FadeIn } from "../components/site/primitives";
-
+import engi from "../assets/engin.jpg"
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
@@ -16,12 +16,12 @@ export const Route = createFileRoute("/blog")({
 });
 
 const posts = [
-  { t: "Why your AI pilot stalled at 80% — and how to get the last 20%", c: "Operations", d: "Most pilots succeed in demo and fail in production. Here's the playbook to bridge the gap." },
-  { t: "The agent stack we ship in 2026", c: "Engineering", d: "Our opinionated agent architecture: LangGraph, MCP, evals, observability, and human handoff." },
-  { t: "RAG is dead. Long live retrieval.", c: "Research", d: "Why naive RAG keeps disappointing — and the retrieval architecture that actually works." },
-  { t: "Evals are the product", c: "Research", d: "Without an eval harness, you don't have a model — you have a vibe." },
-  { t: "Sovereign LLMs: when self-hosting actually wins", c: "Strategy", d: "A pragmatic guide to choosing between hosted frontier models and self-hosted open models." },
-  { t: "Building the AI-native SOC", c: "Security", d: "Multi-agent triage, correlation, and response in modern security operations." },
+  { t: "Why your AI pilot stalled at 80% — and how to get the last 20%", c: "Operations", d: "Most pilots succeed in demo and fail in production. Here's the playbook to bridge the gap.", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" },
+  { t: "The agent stack we ship in 2026", c: "Engineering", d: "Our opinionated agent architecture: LangGraph, MCP, evals, observability, and human handoff.", image:engi },
+  { t: "RAG is dead. Long live retrieval.", c: "Research", d: "Why naive RAG keeps disappointing — and the retrieval architecture that actually works.", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop" },
+  { t: "Evals are the product", c: "Research", d: "Without an eval harness, you don't have a model — you have a vibe.", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800&auto=format&fit=crop" },
+  { t: "Sovereign LLMs: when self-hosting actually wins", c: "Strategy", d: "A pragmatic guide to choosing between hosted frontier models and self-hosted open models.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" },
+  { t: "Building the AI-native SOC", c: "Security", d: "Multi-agent triage, correlation, and response in modern security operations.", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" },
 ];
 
 function Blog() {
@@ -38,8 +38,12 @@ function Blog() {
             <FadeIn key={p.t} delay={i * 0.04}>
               <Link to="/blog" className="group block h-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition hover:border-white/25 hover:bg-white/[0.06]">
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  <div className="absolute inset-0 bg-linear-to-br from-[var(--accent)]/20 via-[var(--surface-2)] to-[var(--accent-2)]/25" />
-                  <div className="absolute inset-0 bg-grid opacity-30" />
+                  <img
+                    src={p.image}
+                    alt={p.t}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
                 </div>
                 <div className="p-6">
                   <p className="text-xs uppercase tracking-[0.2em] text-accent">{p.c}</p>
