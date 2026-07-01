@@ -15,7 +15,9 @@ import { NeuralBackground } from "../components/site/NeuralBackground";
 import Ferrofluid from "../components/Ferrofluid.jsx";
 import { Contact } from "./contact";
 import logoAsset from "@/assets/dovix-logo.asset.json";
+import dovix1 from "../assets/Dovixai2.mp4"
 import dovix from "../assets/DovixVi.mp4"
+import { useMemo, useState, useRef } from "react";
 
 
 export const Route = createFileRoute("/")({
@@ -94,77 +96,81 @@ const testimonials = [
 ];
 
 function Home() {
+
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 12 }).map(() => ({
+        size: Math.random() * 3 + 1,
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        speed: Math.random() * 10 + 5,
+        delay: Math.random() * 5,
+      })),
+    []
+  );
+
+  const gridBlocks = useMemo(
+    () =>
+      Array.from({ length: 10 }).map((_, i) => ({
+        span: 1 + (i % 3),
+        row: 1 + (i % 2),
+        delay: i * 0.15,
+      })),
+    []
+  );
+  
   return (
     <>
       {/* HERO */}
       <section className="relative overflow-hidden bg-background">
-        <NeuralBackground />
+        {/* <NeuralBackground /> */}
         <div className="mx-auto w-full max-w-325 px-6 pt-28 pb-20 sm:pt-36 text-center relative z-10">
           <FadeIn>
             <Eyebrow>Frontier AI · Enterprise Grade · Globally Trusted</Eyebrow>
           </FadeIn>
+
           <FadeIn delay={0.05}>
             <div className="relative mt-5">
-              {/* Concentrated Background Effect behind heading */}
               <div className="absolute inset-0 -z-10 overflow-hidden">
-                {/* <NeuralBackground /> */}
-                <motion.div
-                  animate={{
-                    y: [0, -50, 0],
-                    scale: [1, 1.1, 1],
-                  }}
-                  transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <GlowOrb className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-100 w-100 bg-var(--accent-2)/30" />
-                </motion.div>
-                <motion.div
-                  animate={{
-                    y: [0, 40, 0],
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    duration: 12,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <GlowOrb className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-80 w-80 bg-var(--accent)/25" />
-                </motion.div>
-                {/* floating particles */}
-                <div className="absolute inset-0">
-                  {Array.from({ length: 12 }).map((_, i) => (
-                    <motion.span
-                      key={i}
-                      className="absolute h-1 w-1 rounded-full bg-var(--accent)/70"
-                      style={{
-                        top: `${(i * 40) % 100}%`,
-                        left: `${(i * 30) % 100}%`,
-                      }}
-                      animate={{ y: [0, -50, 0], opacity: [0.2, 1, 0.2] }}
-                      transition={{ duration: 5 + (i % 5), repeat: Infinity, delay: i * 0.5 }}
-                    />
-                  ))}
-                </div>
+                {particles.map((p, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute rounded-full bg-accent/30"
+                    style={{
+                      width: p.size,
+                      height: p.size,
+                      top: `${p.top}%`,
+                      left: `${p.left}%`,
+                      willChange: "transform, opacity",
+                    }}
+                    animate={{
+                      y: [0, -100, 0],
+                      opacity: [0.1, 0.7, 0.1],
+                    }}
+                    transition={{
+                      duration: p.speed / 8,
+                      repeat: Infinity,
+                      delay: p.delay,
+                      ease: "linear",
+                    }}
+                  />
+                ))}
               </div>
 
-              {/* Ferrofluid background behind heading */}
-             
               <h1 className="relative font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
                 Building the <span className="text-gradient">Intelligent Future</span>
                 <br className="hidden sm:block" /> with Artificial Intelligence
               </h1>
             </div>
           </FadeIn>
+
           <FadeIn delay={0.1}>
             <p className="mx-auto mt-7 max-w-2xl text-lg text-muted-foreground sm:text-xl">
               DOVIX AI partners with ambitious organizations to design, build, and scale
               production-grade AI systems — from autonomous agents to enterprise LLM platforms.
             </p>
           </FadeIn>
+
           <FadeIn delay={0.15}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <CTAButton to="/contact">Start an AI Project</CTAButton>
@@ -178,39 +184,46 @@ function Home() {
               <div className="glass-strong rounded-3xl p-2 shadow-[0_30px_120px_-30px_rgba(109,93,254,0.55)]">
                 <div className="relative aspect-video overflow-hidden rounded-2xl bg-linear-to-br from-surface-2 to-background">
                   <div className="absolute inset-0 bg-grid opacity-40" />
+
                   <div className="absolute inset-0 grid grid-cols-12 grid-rows-6">
-                    {Array.from({ length: 18 }).map((_, i) => (
+                    {gridBlocks.map((b, i) => (
                       <motion.div
                         key={i}
                         className="m-2 rounded-lg border border-white/10 bg-white/3"
+                        style={{ willChange: "opacity" }}
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: [0.1, 0.7, 0.1] }}
-                        transition={{ duration: 3, repeat: Infinity, delay: i * 0.15 }}
-                        style={{ gridColumn: `span ${1 + (i % 3)}`, gridRow: `span ${1 + (i % 2)}` }}
+                        animate={{ opacity: [0.1, 0.6, 0.1] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: b.delay }}
+                        style={{ gridColumn: `span ${b.span}`, gridRow: `span ${b.row}` }}
                       />
                     ))}
                   </div>
+
                   <div className="absolute inset-0 grid place-items-center">
                     <div className="relative w-full h-full">
                       <video
-                        src={dovix}
+                        src={dovix1}
                         autoPlay
                         loop
-                        muted
                         playsInline
+                        preload="auto"
+                        controls
                         className="h-full w-full object-cover rounded-3xl"
                       />
                       <div className="absolute inset-0 rounded-3xl bg-linear-to-t from-black/40 to-transparent" />
                     </div>
                   </div>
-                  {/* corner labels */}
+
                   {[
                     { p: "top-4 left-4", t: "RAG · Vector Index" },
                     { p: "top-4 right-4", t: "Agents · Tool-Use" },
                     { p: "bottom-4 left-4", t: "Eval · Guardrails" },
                     { p: "bottom-4 right-4", t: "Observability" },
                   ].map((x) => (
-                    <div key={x.t} className={`absolute ${x.p} rounded-lg border border-white/10 bg-black/40 px-3 py-1.5 text-xs text-foreground/80 backdrop-blur`}>
+                    <div
+                      key={x.t}
+                      className={`absolute ${x.p} rounded-lg border border-white/10 bg-black/40 px-3 py-1.5 text-xs text-foreground/80 backdrop-blur`}
+                    >
                       {x.t}
                     </div>
                   ))}
@@ -218,7 +231,6 @@ function Home() {
               </div>
             </div>
           </FadeIn>
-
 
           <FadeIn delay={0.3}>
             <div className="mx-auto mt-20 grid max-w-4xl grid-cols-2 gap-10 sm:grid-cols-4">
@@ -229,7 +241,6 @@ function Home() {
             </div>
           </FadeIn>
         </div>
-
       </section>
 
       {/* TRUSTED BY */}

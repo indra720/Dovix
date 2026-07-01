@@ -19,16 +19,18 @@ import second from "../assets/Secondpng.jpeg"
 import third from "../assets/Dnew.jpeg"
 import fourth from "../assets/fourthpng.png"
 
+import inder from "../assets/inder.png"
+
 const teamMembers = [
   {
-    name: "Team Member 1",
-    role: "Senior Frontend Developer",
+    name: "Indrajeet",
+    role: "Frontend Developer",
     description:
       "Experienced frontend engineer passionate about modern UI development.",
-    imgSrc: "./team1.jpg",
+    imgSrc: inder,
     imgAlt: "Team Member",
     navigationPath: "/team-member-1",
-    skills: ["React", "TypeScript", "Tailwind", "Next.js"],
+    skills: ["React","Javascript", "TypeScript", "Tailwind","Html","Css","Git/Github"],
   },
   {
     name: "Team Member 2",
@@ -64,6 +66,25 @@ const teamMembers = [
 
 
 const founders = [
+
+  {
+    name: "Abhay Ranjan",
+    role: "Founder",
+    experience: "15+ Years Experience  in Digital Marketing  & Growth market",
+    image: second,
+    twitter: "#",
+    linkedin: "https://www.linkedin.com/in/theabhayranjan/",
+    instagram: "#",
+  },
+  {
+    name: "Ajeet Singh",
+    role: "Founder",
+    experience: "14+ Years Experience as Chief Technical Officer",
+    image: fourth,
+    twitter: "#",
+    linkedin: "https://www.linkedin.com/in/ajit-singh-456785222/",
+    instagram: "#",
+  },
   {
     name: "Mohan Shekhawat",
     role: "Founder",
@@ -76,26 +97,8 @@ const founders = [
   {
     name: "Deepak Sharma",
     role: "Founder",
-    experience: "15+ Year Experiance  in Business Investment & Verticals",
+    experience: "15+ Year Experience  in Business Investment & Verticals",
     image: third,
-    twitter: "#",
-    linkedin: "#",
-    instagram: "#",
-  },
-  {
-    name: "Abhay Ranjan",
-    role: "Founder",
-    experience: "15+ Years Experience  in Digital Marketing  & Growth market",
-    image: second,
-    twitter: "#",
-    linkedin: "#",
-    instagram: "#",
-  },
-  {
-    name: "Ajeet Singh",
-    role: "Founder",
-    experience: "14+ Years Experience as Chief Technical Officer",
-    image: fourth,
     twitter: "#",
     linkedin: "#",
     instagram: "#",
@@ -191,21 +194,21 @@ const About: FC = () => {
                     <div className="mt-4 flex justify-center gap-4">
 
                       <a
-                        href={person.twitter}
+                        href={person.twitter} target="_blank"
                         className="rounded-full border border-white/10 p-2 transition hover:bg-sky-500 hover:text-white"
                       >
                         <Twitter className="h-5 w-5" />
                       </a>
 
                       <a
-                        href={person.linkedin}
+                        href={person.linkedin} target="_blank"
                         className="rounded-full border border-white/10 p-2 transition hover:bg-blue-600 hover:text-white"
                       >
                         <Linkedin className="h-5 w-5" />
                       </a>
 
                       <a
-                        href={person.instagram}
+                        href={person.instagram} target="_blank"
                         className="rounded-full border border-white/10 p-2 transition hover:bg-pink-500 hover:text-white"
                       >
                         <Instagram className="h-5 w-5" />
@@ -353,23 +356,23 @@ const About: FC = () => {
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <GlassCard className="overflow-hidden flex flex-col h-full p-0 group">
-                <div className="relative overflow-hidden h-100">
+              <GlassCard className="overflow-hidden flex flex-col h-full p-0 group text-center">
+                <div className="relative overflow-hidden h-50 w-50 rounded-full mx-auto bg-linear-to-br from-[#00ddff] to-[#7a73ff] ">
                   <img
                     src={member.imgSrc}
                     alt={member.imgAlt}
                     onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
                       e.currentTarget.src = "https://placehold.co/500x500/111827/FFFFFF?text=Team";
                     }}
-                    className="w-full h-auto object-cover group-hover:scale-110 transition duration-700"
+                    className="w-50 h-50 p-2 object-cover object-[center_30%]  transition duration-700 rounded-full"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60" />
                 </div>
                 <div className=" flex flex-col grow">
-                  <h3 className="text-2xl font-bold">{member.name}</h3>
+                  <h3 className="text-2xl font-bold mt-2">{member.name}</h3>
                   <p className="text-accent font-semibold mt-2">{member.role}</p>
-                  <p className="text-muted-foreground leading-relaxed mt-4 grow">{member.description}</p>
-                  <div className="flex flex-wrap gap-2 mt-6">
+                  <p className="mt-4 min-h-24 text-muted-foreground leading-relaxed line-clamp-3">{member.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-6 min-  ">
                     {member.skills.map((skill, skillIndex) => (
                       <span key={skillIndex} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-foreground/80">
                         {skill}
