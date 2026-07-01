@@ -97,7 +97,7 @@ const founders = [
   {
     name: "Deepak Sharma",
     role: "Founder",
-    experience: "15+ Year Experiance  in Business Investment & Verticals",
+    experience: "15+ Year Experience  in Business Investment & Verticals",
     image: third,
     twitter: "#",
     linkedin: "#",

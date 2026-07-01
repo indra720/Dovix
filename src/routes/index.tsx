@@ -118,17 +118,7 @@ function Home() {
       })),
     []
   );
-
-  // const videoRef = useRef<HTMLVideoElement>(null);
-  // const [isMuted, setIsMuted] = useState(true);
-
-  // const toggleMute = () => {
-  //   if (videoRef.current) {
-  //     videoRef.current.muted = !videoRef.current.muted;
-  //     setIsMuted(videoRef.current.muted);
-  //   }
-  // };
-
+  
   return (
     <>
       {/* HERO */}
@@ -212,17 +202,14 @@ function Home() {
                   <div className="absolute inset-0 grid place-items-center">
                     <div className="relative w-full h-full">
                       <video
-                        
                         src={dovix1}
                         autoPlay
                         loop
-                      
-                        controls
                         playsInline
                         preload="auto"
+                        controls
                         className="h-full w-full object-cover rounded-3xl"
                       />
-                      
                       <div className="absolute inset-0 rounded-3xl bg-linear-to-t from-black/40 to-transparent" />
                     </div>
                   </div>
