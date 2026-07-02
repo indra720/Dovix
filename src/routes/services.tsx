@@ -118,11 +118,11 @@ function Services() {
       </PageHero>
 
       {groups.map((g, gi) => (
-        <Section key={g.title}>
+        <Section key={g.title} className="relative overflow-hidden  pt-0 sm:pt-0 pb-6 sm:pb-8">
           <FadeIn>
             <SectionHeading eyebrow={`0${gi + 1}`} title={g.title} />
           </FadeIn>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 ">
             {g.items.map((it, i) => (
               <FadeIn key={it.t} delay={i * 0.04}>
                 <GlassCard className="h-full">

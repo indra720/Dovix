@@ -190,11 +190,14 @@ function Home() {
                       <motion.div
                         key={i}
                         className="m-2 rounded-lg border border-white/10 bg-white/3"
-                        style={{ willChange: "opacity" }}
+                        style={{
+                          willChange: "opacity",
+                          gridColumn: `span ${b.span}`,
+                          gridRow: `span ${b.row}`,
+                        }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: [0.1, 0.6, 0.1] }}
                         transition={{ duration: 3, repeat: Infinity, delay: b.delay }}
-                        style={{ gridColumn: `span ${b.span}`, gridRow: `span ${b.row}` }}
                       />
                     ))}
                   </div>
@@ -244,7 +247,7 @@ function Home() {
       </section>
 
       {/* TRUSTED BY */}
-      <section className="border-y border-white/5 bg-white/2 py-12">
+      <section className="border-y border-white/5 bg-white/2 py-6">
         <div className="mx-auto w-full max-w-375 px-6 sm:px-10">
           <p className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">
             Trusted by ambitious teams across India & beyond
@@ -262,7 +265,7 @@ function Home() {
       </section>
 
       {/* VIDEO SECTIONS — three highlights */}
-      <Section>
+      <Section className="pt-10!">
         <FadeIn>
           <SectionHeading
             eyebrow="See it in motion"
@@ -270,7 +273,7 @@ function Home() {
             subtitle="Short product walkthroughs of the systems we ship most often — from agents to vision to marketing."
           />
         </FadeIn>
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
           <FadeIn delay={0.05}>
             <VideoCard
               title="Autonomous Agents in action"
@@ -299,7 +302,7 @@ function Home() {
       </Section>
 
       {/* COMPANY PROFILE VIDEO */}
-      <Section>
+      <Section className="pt-2!">
         <FadeIn>
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] ">
             <VideoCard
@@ -308,7 +311,7 @@ function Home() {
               src="https://cdn.pixabay.com/video/2024/05/22/212447_large.mp4"
               poster="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80&auto=format&fit=crop"
             />
-            <div>
+            <div className="h-full rounded-3xl border border-white/10 bg-linear-to-br from-surface-2 to-background p-8 sm:p-12 ">
               <Eyebrow>Company profile</Eyebrow>
               <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
                 A frontier AI studio, <span className="text-gradient">born in Jaipur</span>, building for the world.
@@ -328,7 +331,7 @@ function Home() {
       </Section>
 
       {/* SERVICES */}
-      <Section>
+      <Section className="pt-0!">
         <FadeIn>
           <SectionHeading
             eyebrow="What we do"
@@ -336,7 +339,7 @@ function Home() {
             subtitle="From generative AI and autonomous agents to deep learning and computer vision — we build the systems that move enterprise needles."
           />
         </FadeIn>
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <FadeIn key={s.title} delay={i * 0.05}>
               <GlassCard className="h-full">
@@ -355,7 +358,7 @@ function Home() {
       </Section>
 
       {/* WHY DOVIX */}
-      <Section>
+      <Section className="pt-0!">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <FadeIn>
             <SectionHeading
@@ -363,7 +366,7 @@ function Home() {
               title={<>A frontier-lab mindset with <span className="text-gradient">enterprise discipline</span>.</>}
               subtitle="We combine research-grade engineering with the pragmatism of shipping into regulated, high-stakes environments."
             />
-            <div className="mt-8 space-y-4">
+            <div className="mt-6 space-y-4">
               {[
                 ["Research-grade engineering", "Eval-first development, red-teaming, and continuous benchmarking baked into every system."],
                 ["Domain-deep teams", "Vertical squads with real expertise in healthcare, finance, retail, and government."],
@@ -406,7 +409,7 @@ function Home() {
       </Section>
 
       {/* PRODUCTS */}
-      <Section>
+      <Section className="pt-0! ">
         <FadeIn>
           <SectionHeading
             eyebrow="Products"
@@ -414,7 +417,7 @@ function Home() {
             subtitle="A modular suite of AI-native business applications that ship in weeks, not quarters."
           />
         </FadeIn>
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((p, i) => (
             <FadeIn key={p.name} delay={i * 0.05}>
               <GlassCard className="h-full">
@@ -433,14 +436,14 @@ function Home() {
       </Section>
 
       {/* INDUSTRIES */}
-      <Section>
+      <Section className="pt-0! ">
         <FadeIn>
           <SectionHeading
             eyebrow="Industries"
             title={<>AI built for the realities of <span className="text-gradient">your sector</span>.</>}
           />
         </FadeIn>
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {industries.map((i, k) => (
             <FadeIn key={i.name} delay={k * 0.04}>
               <Link
@@ -456,7 +459,7 @@ function Home() {
       </Section>
 
       {/* TECH STACK */}
-      <Section>
+      <Section className="pt-0!">
         <FadeIn>
           <SectionHeading
             eyebrow="Technology"
@@ -464,7 +467,7 @@ function Home() {
             subtitle="From foundation models and vector databases to MLOps and cloud — we use the right tool, never the trendy one."
           />
         </FadeIn>
-        <div className="mt-12 flex flex-wrap justify-center gap-3">
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           {stack.map((s) => (
             <span key={s} className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-foreground/80 transition hover:border-accent/40 hover:text-accent">
               {s}
@@ -474,14 +477,14 @@ function Home() {
       </Section>
 
       {/* PROCESS */}
-      <Section>
+      <Section className="pt-0!">
         <FadeIn>
           <SectionHeading
             eyebrow="Our process"
             title={<>From idea to <span className="text-gradient">intelligent system</span> in weeks.</>}
           />
         </FadeIn>
-        <div className="relative mt-16 grid gap-6 lg:grid-cols-4">
+        <div className="relative mt-6 grid gap-6 lg:grid-cols-4">
           {process.map((p, i) => (
             <FadeIn key={p.step} delay={i * 0.07}>
               <div className="relative h-full rounded-2xl border border-white/10 bg-linear-to-b from-white/[0.06] to-transparent p-6">
@@ -495,14 +498,14 @@ function Home() {
       </Section>
 
       {/* CASE STUDIES preview */}
-      <Section>
+      <Section className="pt-0!">
         <FadeIn>
           <SectionHeading
             eyebrow="Case studies"
             title={<>Outcomes our clients <span className="text-gradient">put in their board decks</span>.</>}
           />
         </FadeIn>
-        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
           {[
             { sector: "Healthcare", metric: "42%", desc: "Reduction in diagnostic turnaround at a 12-hospital network using our vision platform." },
             { sector: "Finance", metric: "$210M", desc: "Annual fraud loss avoided with our real-time multi-agent anomaly system." },
@@ -523,14 +526,14 @@ function Home() {
       </Section>
 
       {/* TESTIMONIALS */}
-      <Section>
+      <Section className="pt-0! ">
         <FadeIn>
           <SectionHeading
             eyebrow="What leaders say"
             title={<>Trusted by operators who <span className="text-gradient">ship at scale</span>.</>}
           />
         </FadeIn>
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <FadeIn key={t.who} delay={i * 0.07}>
               <GlassCard className="h-full">
@@ -546,9 +549,9 @@ function Home() {
       </Section>
 
       {/* CTA */}
-      <Section>
+      <Section className="pt-0!">
         <FadeIn>
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-[var(--surface-2)] to-[var(--background)] p-12 sm:p-20">
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-[var(--surface-2)] to-[var(--background)] p-12 ">
             <GlowOrb className="-top-20 -right-20 h-100 w-100 bg-[var(--accent-2)]/30" />
             <GlowOrb className="-bottom-20 -left-20 h-100 w-100 bg-var(--accent)/25" />
             <div className="relative mx-auto max-w-3xl text-center">
