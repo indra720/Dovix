@@ -107,14 +107,14 @@ const founders = [
 
 const About: FC = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen mt-6 bg-background text-foreground">
       {/* ================= HERO SECTION ================= */}
       <PageHero
         eyebrow="Welcome To Dovix"
         title={<>About <GradientText>DOVIX</GradientText></>}
         subtitle="Dovix is a modern software company focused on delivering world-class digital solutions, AI-powered products, scalable applications and next-generation technologies that help businesses grow faster."
       >
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto">
           {[
             {
               title: "Our Mission",
@@ -130,7 +130,7 @@ const About: FC = () => {
             },
           ].map((item, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <GlassCard className="text-center p-8">
+              <GlassCard className="text-center p-8 h-full">
                 <h2 className="text-2xl font-bold text-accent mb-4">
                   {item.title}
                 </h2>
@@ -144,51 +144,53 @@ const About: FC = () => {
       </PageHero>
 
       {/* ================= LEADERSHIP SECTION ================= */}
-      <Section className="relative">
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <GlowOrb className="absolute top-1/2 -left-20 -z-10 h-125 w-auto  bg-(--accent-2)/10" />
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <FadeIn>
-            <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+          <FadeIn className="h-full">
+            <div className="grid md:grid-cols-2 gap-6 h-full">
 
               {founders.map((person) => (
 
                 <div
                   key={person.name}
-                  className="group overflow-hidden rounded-3xl border border-white/10 bg-surface shadow-xl transition duration-500 hover:-translate-y-2"
+                  className="group overflow-hidden rounded-3xl border border-white/10 bg-surface shadow-xl transition duration-500 hover:-translate-y-2 flex flex-col h-full"
                 >
 
-                  <div className="mx-auto mt-5 h-50 w-52 overflow-hidden rounded-full border-4 border-cyan-500/30 shadow-xl">
+                  <div className="mx-auto mt-5 h-50 w-52 overflow-hidden rounded-full border-4 border-cyan-500/30 shadow-xl shrink-0">
 
                     <img
                       src={person.image}
                       alt={person.name}
-                      className="h-full w-full  transition duration-700 group-hover:scale-110"
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                     />
 
                   </div>
 
-                  <div className="p-5 text-center">
+                  <div className="p-5 text-center flex flex-col grow justify-between">
 
-                    <h3 className="text-xl font-bold">
+                    <div>
+                      <h3 className="text-xl font-bold">
 
-                      {person.name}
+                        {person.name}
 
-                    </h3>
+                      </h3>
 
-                    <div className="mt-2">
+                      <div className="mt-2">
 
-                      <p className="text-accent font-semibold">
+                        <p className="text-accent font-semibold">
 
-                        {person.role}
+                          {person.role}
 
-                      </p>
+                        </p>
 
-                      <p className="mt-1 text-sm text-muted-foreground">
+                        <p className="mt-1 text-sm text-muted-foreground">
 
-                        {person.experience}
+                          {person.experience}
 
-                      </p>
+                        </p>
 
+                      </div>
                     </div>
 
                     <div className="mt-4 flex justify-center gap-4">
@@ -225,26 +227,28 @@ const About: FC = () => {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.1}>
-            <div>
-              <Eyebrow>Leadership • Innovation • Growth</Eyebrow>
-              <blockquote className="text-2xl  font-light italic leading-relaxed border-l-4 border-accent pl-6 text-foreground/80 mt-8">
-                “Technology isn't just about writing software — it's about creating opportunities, solving real-world problems and empowering people.”
-              </blockquote>
-              <h2 className="mt-10 text-3xl font-bold">
-                <GradientText>Your Founders</GradientText>
-              </h2>
-              <p className="text-xl font-semibold text-muted-foreground mt-3">
-                Founder - DOVIX
-              </p>
-              <div className="space-y-6 mt-8 text-muted-foreground leading-relaxed">
-                <p>At DOVIX, we believe that every business deserves technology that is innovative, scalable, secure, and built for long-term success.</p>
-                <p>Our mission is to empower startups, enterprises, and organizations by providing world-class software solutions, AI-powered products, cloud applications, enterprise systems, and modern digital experiences.</p>
-                <p>Every solution we create is designed with performance, scalability, user experience, and business growth in mind. We focus on transforming ideas into impactful digital products that create measurable value.</p>
-                <p>From web development to enterprise software, artificial intelligence, automation, UI/UX design, and cloud technologies, DOVIX is committed to delivering excellence at every stage of digital transformation.</p>
+          <FadeIn delay={0.1} className="h-full">
+            <div className="flex flex-col h-full justify-between">
+              <div>
+                <Eyebrow>Leadership • Innovation • Growth</Eyebrow>
+                <blockquote className="text-md sm:text-2xl  font-light italic leading-relaxed border-l-4 border-accent pl-6 text-foreground/80 mt-8">
+                  “Technology isn't just about writing software — it's about creating opportunities, solving real-world problems and empowering people.”
+                </blockquote>
+                <h2 className="mt-10 text-3xl font-bold italic">
+                  <GradientText>Your Founders</GradientText>
+                </h2>
+                <p className="text-xl font-semibold text-muted-foreground mt-3">
+                  Founder - DOVIX
+                </p>
+                <div className="space-y-6 mt-8 text-muted-foreground leading-relaxed">
+                  <p>At DOVIX, we believe that every business deserves technology that is innovative, scalable, secure, and built for long-term success.</p>
+                  <p>Our mission is to empower startups, enterprises, and organizations by providing world-class software solutions, AI-powered products, cloud applications, enterprise systems, and modern digital experiences.</p>
+                  <p>Every solution we create is designed with performance, scalability, user experience, and business growth in mind. We focus on transforming ideas into impactful digital products that create measurable value.</p>
+                  <p>From web development to enterprise software, artificial intelligence, automation, UI/UX design, and cloud technologies, DOVIX is committed to delivering excellence at every stage of digital transformation.</p>
+                </div>
               </div>
-              <div className="mt-10 p-8 rounded-3xl bg-linear-to-br from-var(--accent)/20 to-var(--accent-2)/20 border border-white/10 backdrop-blur-md">
-                <h3 className="text-2xl font-bold mb-3 text-foreground">Leadership Philosophy</h3>
+              <div className="mt-8 p-4 sm:p-8 rounded-3xl bg-linear-to-br from-var(--accent)/20 to-var(--accent-2)/20 border border-white/10 backdrop-blur-md">
+                <h3 className="text-md sm:text-2xl font-bold mb-3 text-foreground">Leadership Philosophy</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   We lead with innovation, build with passion, deliver with excellence, and continuously evolve through learning. Success comes from creating value for clients, empowering teams, and embracing technology that shapes the future.
                 </p>
@@ -255,26 +259,27 @@ const About: FC = () => {
       </Section>
 
       {/* ================= COMPANY STORY ================= */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn>
           <SectionHeading
+           
             align="center"
             eyebrow="Our Story"
             title={<>Building The Future With <GradientText>Technology</GradientText></>}
             subtitle="DOVIX started with a simple vision — helping businesses leverage technology to solve real-world challenges. Today, we continue to build scalable, intelligent and future-ready digital products that drive innovation."
           />
         </FadeIn>
-        <div className="mt-16 grid md:grid-cols-2 gap-10">
+        <div className="mt-6 grid md:grid-cols-2 gap-10">
           <FadeIn delay={0.1}>
-            <GlassCard className="p-10">
-              <h3 className="text-3xl font-bold mb-6 text-accent">Who We Are</h3>
+            <GlassCard className="p-2 sm:p-10">
+              <h3 className="text-xl sm:text-3xl font-bold mb-4 text-accent">Who We Are</h3>
               <p className="text-muted-foreground leading-relaxed">
                 DOVIX is a technology company delivering innovative software solutions, enterprise applications, AI-powered platforms, cloud services, mobile apps, and digital transformation strategies for businesses worldwide.
               </p>
             </GlassCard>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <GlassCard className="p-10">
+            <GlassCard className="p-2 sm:p-10">
               <h3 className="text-3xl font-bold mb-6 text-accent">What We Believe</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Innovation is successful only when it creates measurable business impact. That's why every project at DOVIX focuses on quality, security, scalability, user experience, and long-term customer success.
@@ -285,7 +290,7 @@ const About: FC = () => {
       </Section>
 
       {/* ================= COMPANY STATS ================= */}
-      <Section className="relative overflow-hidden">
+      <Section className="relative overflow-hidden  pt-0 sm:pt-0 pb-10 sm:pb-12">
         <GlowOrb className="absolute inset-0 -z-10 h-full w-full bg-linear-to-br from-var(--accent)/10 via-transparent to-var(--accent-2)/10" />
         <FadeIn>
           <SectionHeading
@@ -295,7 +300,7 @@ const About: FC = () => {
             subtitle="We don't just build software—we create long-lasting digital experiences that help startups and enterprises scale confidently in today's competitive world."
           />
         </FadeIn>
-        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-6 grid grid-cols-2  md:grid-cols-3  w-full  lg:grid-cols-4 gap-4  h-full border border-white/10 rounded-3xl bg-linear-to-br from-var(--surface-2) to-var(--background) p-8 sm:p-12">
           {[
             { value: "120+", label: "Projects Completed" },
             { value: "50+", label: "Happy Clients" },
@@ -303,14 +308,14 @@ const About: FC = () => {
             { value: "99%", label: "Client Satisfaction" },
           ].map((item, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <Stat value={item.value} label={item.label} />
+              <Stat value={item.value} label={item.label}  />
             </FadeIn>
           ))}
         </div>
       </Section>
 
       {/* ================= WHY CHOOSE DOVIX ================= */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn>
           <SectionHeading
             align="center"
@@ -319,7 +324,7 @@ const About: FC = () => {
             subtitle="We combine creativity, engineering excellence, business strategy and modern technologies to deliver outstanding digital products."
           />
         </FadeIn>
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-6 grid md:grid-cols-3 lg:grid-cols-4 gap-4 ">
           {[
             { title: "Innovation", desc: "We embrace emerging technologies and modern development practices to build future-ready software." },
             { title: "Scalable Architecture", desc: "Applications designed for high performance, security and long-term business growth." },
@@ -329,7 +334,7 @@ const About: FC = () => {
             { title: "24/7 Support", desc: "Continuous assistance and long-term technical support for every project." },
           ].map((item, index) => (
             <FadeIn key={index} delay={index * 0.05}>
-              <GlassCard className="p-10 h-full">
+              <GlassCard className="p-2 sm:p-10 h-full">
                 <div className="w-12 h-12 rounded-xl bg-linear-to-br from-var(--accent) to-var(--accent-2) flex items-center justify-center text-white text-xl font-bold mb-6 shadow-[0_0_20px_var(--accent)]">
                   {index + 1}
                 </div>
@@ -344,7 +349,7 @@ const About: FC = () => {
 
 
       {/* ================= OUR TEAM ================= */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn>
           <SectionHeading
             align="center"
@@ -392,7 +397,7 @@ const About: FC = () => {
       </Section>
 
       {/* ================= OUR CORE EXPERTISE ================= */}
-      <Section>
+      <Section className="">
         <FadeIn>
           <SectionHeading
             align="center"
@@ -417,7 +422,7 @@ const About: FC = () => {
 
 
       {/* ================= ACHIEVEMENTS ================= */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <FadeIn>
             <SectionHeading
@@ -441,7 +446,7 @@ const About: FC = () => {
         </div>
       </Section>
       {/* ================= OUR CULTURE ================= */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn>
           <SectionHeading
             align="center"
@@ -469,7 +474,7 @@ const About: FC = () => {
       </Section>
 
       {/* ================= TESTIMONIAL ================= */}
-      <Section className="relative">
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="absolute inset-0 -z-10 bg-linear-to-r from-slate-900 via-cyan-900/30 to-slate-900" />
         <FadeIn>
           <div className="max-w-5xl mx-auto px-6 text-center">
@@ -486,7 +491,7 @@ const About: FC = () => {
       </Section>
 
       {/* ================= COMPANY JOURNEY ================= */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn>
           <SectionHeading
             align="center"
@@ -514,7 +519,7 @@ const About: FC = () => {
       </Section>
 
       {/* ================= DEVELOPMENT PROCESS ================= */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn>
           <SectionHeading
             align="center"
@@ -543,7 +548,7 @@ const About: FC = () => {
       </Section>
 
       {/* ================= FUTURE VISION ================= */}
-      <Section className="relative overflow-hidden">
+      <Section className="relative overflow-hidden pt-0 sm:pt-0 pb-10 sm:pb-12">
         <GlowOrb className="absolute inset-0 -z-10 h-full w-full bg-linear-to-br from-(--accent)/10 via-transparent to-(--accent-2)/10" />
         <FadeIn>
           <div className="max-w-5xl mx-auto text-center">
@@ -571,7 +576,7 @@ const About: FC = () => {
       </Section>
 
       {/* ================= JOIN DOVIX CTA ================= */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn>
           <div className="relative overflow-hidden rounded-[40px] bg-linear-to-br from-var(--accent) to-var(--accent-2) text-background text-center p-4 shadow-2xl">
             <GlowOrb className="-top-20 -right-20 h-100 w-100 bg-white/20" />
@@ -599,7 +604,7 @@ const About: FC = () => {
       </Section>
 
       {/* ================= FINAL MESSAGE ================= */}
-      <Section className="relative overflow-hidden py-12">
+      <Section className="relative overflow-hidden py-12  pt-0 sm:pt-0 pb-10 sm:pb-12">
         <GlowOrb className="absolute bottom-0 left-1/2 -translate-x-1/2 -z-10 h-150 w-200 bg-(--accent-2)/10 blur-3xl" />
         <FadeIn>
           <div className="w-full  text-center">
