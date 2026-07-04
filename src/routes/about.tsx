@@ -14,7 +14,7 @@ import {
 } from "../components/site/primitives";
 import { ArrowRight, CheckCircle2, Instagram, Linkedin, Twitter } from "lucide-react";
 
-import mohpng from "../assets/MohPng.jpeg"
+import mohpng from "../assets/MS.png"
 import second from "../assets/Secondpng.jpeg"
 import third from "../assets/Dnew.jpeg"
 import fourth from "../assets/fourthpng.png"
