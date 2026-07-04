@@ -69,13 +69,17 @@ export function Contact() {
                   <Info icon={Mail} text="info@dovix.ai" />
                   <Info icon={Phone} text="+91 91163 82399" />
                   <Info icon={MessageCircle} text="WhatsApp · +91 91163 82399" />
-                  <Info icon={MapPin} text="B-18, 2nd Floor, Shiv Marg, Opposite Maharshi Raman Diagnostic Center, Kanti Nagar, Bani Park, Jaipur, Rajasthan 302015, India" />
+                  <Info icon={MapPin} text=" Registered Office :-   B-18, 2nd Floor, Shiv Marg, Opposite Maharshi Raman Diagnostic Center, Kanti Nagar, Bani Park, Jaipur, Rajasthan 302015, India" />
+                  <div className="pl-7 text-foreground/85">
+                  Branch Office :-  Plot no 43 -jugraj apartment shiv shankar colony gopal pura byepass road jaipur 302019
+                  </div>
+                  
                   <Info icon={Clock} text="Mon — Sat · 10:00 to 19:00 IST" />
                 </div>
               </GlassCard>
               <GlassCard>
                 <h3 className="font-display text-lg font-semibold">Follow us</h3>
-                <div className="mt-4 grid grid-cols-3 gap-2">
+                <div className="mt-4 grid grid-cols-2  sm:grid-cols-3 gap-2">
                   {[
                     { I: Linkedin, label: "LinkedIn", href: "#" },
                     { I: Instagram, label: "Instagram", href: "#" },
@@ -86,6 +90,7 @@ export function Contact() {
                   ].map(({ I, label, href }) => (
                     <a key={label} href={href} aria-label={`DOVIX AI on ${label}`} className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-xs transition hover:border-accent/50 hover:text-accent">
                       <I className="h-4 w-4" /> {label}
+                      
                     </a>
                   ))}
                 </div>

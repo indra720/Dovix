@@ -1,9 +1,9 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Mail, Phone } from "lucide-react";
 import logoAsset from "@/assets/dovix-logo.asset.json";
 import { ThemeToggle } from "./ThemeToggle";
-import logo from "../../assets/logoNewUpdate.png"
+import logo from "../../assets/DovixaiWhite-removebg-preview.png"
 
 type NavItem =
   | { to: string; label: string }
@@ -61,37 +61,35 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-2" : "py-4"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "py-2" : "py-4"
+        }`}
     >
       {/* contact section */}
       <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-8">
-        <div className="flex flex-col sm:flex-row justify-between items-center text-sm font-medium text-foreground/80 mb-3 px-4 py-1.5 bg-white/5 rounded-2xl sm:rounded-full backdrop-blur-md border border-white/5 gap-2 sm:gap-0">
+        <div className="flex flex-col sm:flex-row justify-between items-center text-sm font-medium text-foreground/80 mb-0.5 px-4 py-3.5 bg-(--background)/80 backdrop-blur-xl shadow-[0_10px_40px_-20px_rgba(0,0,0,0.8)] rounded-xl sm:rounded-full border border-white/5 gap-2 sm:gap-0">
           <a href="mailto:info@dovix.ai" className="hover:text-accent transition-colors flex items-center gap-1.5">
-            <span>📧</span> info@dovix.ai
+            <span><Mail size={16} /></span> info@dovix.ai
           </a>
           <a href="tel:+919116382399" className="hover:text-accent transition-colors flex items-center gap-1.5">
-            <span>📞 Contact us:  </span>  +91 91163 82399
+            <span><Phone size={16} />   </span>Contact us:  +91 91163 82399
           </a>
         </div>
-        <div  
-          className={`flex items-center justify-between rounded-2xl border border-white/10 px-5 py-3 transition-all duration-500 ${
-            scrolled
+        <div
+          className={`flex items-center justify-between rounded-2xl border border-white/10 px-5 py-2 transition-all duration-500 ${scrolled
               ? "bg-(--background)/80 backdrop-blur-xl shadow-[0_10px_40px_-20px_rgba(0,0,0,0.8)]"
               : "bg-(--background)/30 backdrop-blur-md"
-          }`}
+            }`}
         >
           <Link to="/" className="flex items-center gap-3 shrink-0">
             <img
               src={logo}
               alt="DOVIX AI"
-              className="h-20 w-40 drop-shadow-[0_0_22px_rgba(0,245,255,0.35)] "
+              className="h-24 w-40 drop-shadow-[0_0_22px_rgba(0,245,255,0.35)] "
             />
             <span className="sr-only">DOVIX AI</span>
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="hidden items-center gap-1 xl:flex">
             {nav.map((n) => {
               if ("children" in n) {
                 const active = n.children.some((c) => c.to === pathname);
@@ -104,9 +102,8 @@ export function Navbar() {
                   >
                     <button
                       onClick={() => setWorkOpen((v) => !v)}
-                      className={`relative inline-flex items-center gap-1 rounded-lg px-4 py-2.5 text-[15px] font-semibold tracking-tight transition ${
-                        active ? "text-accent" : "text-foreground/80 hover:text-foreground"
-                      }`}
+                      className={`relative inline-flex items-center gap-1 rounded-lg px-4 py-2.5 text-[15px] font-semibold tracking-tight transition ${active ? "text-accent" : "text-foreground/80 hover:text-foreground"
+                        }`}
                       aria-haspopup="menu"
                       aria-expanded={workOpen}
                     >
@@ -130,11 +127,10 @@ export function Navbar() {
                               key={c.to}
                               to={c.to}
                               role="menuitem"
-                              className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition ${
-                                cActive
+                              className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition ${cActive
                                   ? "bg-white/5 text-accent"
                                   : "text-foreground/85 hover:bg-white/5 hover:text-foreground"
-                              }`}
+                                }`}
                             >
                               {c.label}
                             </Link>
@@ -151,9 +147,8 @@ export function Navbar() {
                 <Link
                   key={n.to}
                   to={n.to}
-                  className={`relative rounded-lg px-4 py-2.5 text-[15px] font-semibold tracking-tight transition ${
-                    active ? "text-accent" : "text-foreground/80 hover:text-foreground"
-                  }`}
+                  className={`relative rounded-lg px-4 py-2.5 text-[15px] font-semibold tracking-tight transition ${active ? "text-accent" : "text-foreground/80 hover:text-foreground"
+                    }`}
                 >
                   {n.label}
                   {active && (
@@ -174,7 +169,7 @@ export function Navbar() {
             </Link>
             <button
               onClick={() => setOpen((v) => !v)}
-              className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-foreground lg:hidden"
+              className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-foreground xl:hidden"
               aria-label="Toggle menu"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -183,7 +178,7 @@ export function Navbar() {
         </div>
 
         {open && (
-          <div className="mt-2 rounded-2xl border border-white/10 bg-[var(--background)]/95 p-4 backdrop-blur-xl lg:hidden">
+          <div className="mt-2 rounded-2xl border border-white/10 bg-[var(--background)]/95 p-4 backdrop-blur-xl xl:hidden">
             <div className="grid grid-cols-2 gap-1">
               {nav.map((n) => {
                 if ("children" in n) {
