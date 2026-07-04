@@ -66,6 +66,14 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-8">
+        <div className="flex flex-col sm:flex-row justify-between items-center text-sm font-medium text-foreground/80 mb-3 px-4 py-1.5 bg-white/5 rounded-2xl sm:rounded-full backdrop-blur-md border border-white/5 gap-2 sm:gap-0">
+          <a href="mailto:info@dovix.ai" className="hover:text-accent transition-colors flex items-center gap-1.5">
+            <span>📧</span> info@dovix.ai
+          </a>
+          <a href="tel:+919116382399" className="hover:text-accent transition-colors flex items-center gap-1.5">
+            <span>📞 Contact us:  </span>  +91 91163 82399
+          </a>
+        </div>
         <div
           className={`flex items-center justify-between rounded-2xl border border-white/10 px-5 py-3 transition-all duration-500 ${
             scrolled
