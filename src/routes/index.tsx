@@ -218,14 +218,14 @@ function Home() {
                   </div>
 
                   {[
-                    { p: "top-4 left-4", t: "RAG · Vector Index" },
-                    { p: "top-4 right-4", t: "Agents · Tool-Use" },
-                    { p: "bottom-4 left-4", t: "Eval · Guardrails" },
-                    { p: "bottom-4 right-4", t: "Observability" },
+                    { p: "top-2 left-4", t: "RAG · Vector Index" },
+                    { p: "top-2 right-4", t: "Agents · Tool-Use" },
+                    { p: "bottom-2 left-4", t: "Eval · Guardrails" },
+                    { p: "bottom-2 right-4", t: "Observability" },
                   ].map((x) => (
                     <div
                       key={x.t}
-                      className={`absolute ${x.p} rounded-lg border border-white/10 bg-black/40 px-3 py-1.5 text-xs text-foreground/80 backdrop-blur`}
+                      className={`absolute ${x.p} rounded-lg border border-white/10 bg-black/40 px-3 py-1 text-xs text-foreground/80 backdrop-blur`}
                     >
                       {x.t}
                     </div>
