@@ -124,9 +124,9 @@ function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-background">
         {/* <NeuralBackground /> */}
-        <div className="mx-auto w-full max-w-325 px-6 pt-28 pb-20 sm:pt-36 text-center relative z-10">
+        <div className="mx-auto w-full max-w-325 px-6   pb-20 pt-56 sm:pt-48 text-center relative z-10">
           <FadeIn>
-            <Eyebrow>Frontier AI · Enterprise Grade · Globally Trusted</Eyebrow>
+            <Eyebrow >Frontier AI · Enterprise Grade · Globally Trusted</Eyebrow>
           </FadeIn>
 
           <FadeIn delay={0.05}>
@@ -157,7 +157,7 @@ function Home() {
                 ))}
               </div>
 
-              <h1 className="relative font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="relative font-display text-2xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
                 Building the <span className="text-gradient">Intelligent Future</span>
                 <br className="hidden sm:block" /> with Artificial Intelligence
               </h1>

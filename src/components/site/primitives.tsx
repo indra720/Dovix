@@ -40,7 +40,7 @@ export function SectionHeading({
   align?: "left" | "center";
 }) {
   return (
-    <div className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
+    <div className={`w-full max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       <h2 className="mt-4 font-display text-xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-[2.75rem]">
         {title}
@@ -129,7 +129,7 @@ export function GlassCard({
 }) {
   return (
     <div
-      className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-linear-to-b from-white/[0.06] to-white/[0.02] p-6 transition hover:border-white/20 ${className}`}
+      className={`group relative  overflow-hidden rounded-2xl border border-white/10 bg-linear-to-b from-white/[0.06] to-white/[0.02] p-2 transition hover:border-white/20 ${className}`}
     >
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition group-hover:opacity-100">
         <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-[var(--accent)]/20 via-transparent to-[var(--accent-2)]/20" />
@@ -162,7 +162,7 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden pt-32 pb-16">
+    <section className="relative overflow-hidden pt-56 sm:pt-48 pb-16">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 bg-grid [mask-image:radial-gradient(60%_60%_at_50%_0%,#000_30%,transparent_75%)]"
@@ -174,7 +174,7 @@ export function PageHero({
           <Eyebrow>{eyebrow}</Eyebrow>
         </FadeIn>
         <FadeIn delay={0.05}>
-          <h1 className="mt-5 font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="mt-5 font-display text-2xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
             {title}
           </h1>
         </FadeIn>

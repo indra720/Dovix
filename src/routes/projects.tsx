@@ -112,7 +112,7 @@ const categories = [
   "IoT",
 ];
 
-const Projects: FC = () => {
+function Projects (){
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredProjects =
@@ -125,7 +125,7 @@ const Projects: FC = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36">
+      <section className="relative overflow-hidden pt-56 pb-20 sm:pt-48">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
           <NeuralBackground />
           <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_0%,transparent_30%,var(--background)_85%)]" />
@@ -145,7 +145,7 @@ const Projects: FC = () => {
       </section>
 
       {/* CATEGORY FILTER */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="flex flex-wrap justify-center gap-3">
           {categories.map((category) => (
             <button
@@ -164,7 +164,7 @@ const Projects: FC = () => {
       </Section>
 
       {/* PROJECTS GRID */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project, i) => (
             <FadeIn key={project.title} delay={i * 0.05}>

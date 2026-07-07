@@ -26,7 +26,7 @@ export function Contact() {
         title={<>Let's build something <span className="text-gradient">intelligent</span>.</>}
         subtitle="Tell us what you're working on. We'll come back with an architecture and a plan within 48 hours."
       />
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           <FadeIn>
             <GlassCard>
@@ -113,7 +113,7 @@ export function Contact() {
       </Section>
 
       {/* INSTAGRAM FEED */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn>
           <SectionHeading
             eyebrow="@dovix.ai on Instagram"

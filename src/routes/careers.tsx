@@ -54,7 +54,7 @@ function Careers() {
         subtitle="We're hiring across research, engineering, applied AI, marketing, design, and go-to-market."
       />
 
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn><SectionHeading eyebrow="Open roles" title="Currently hiring" /></FadeIn>
         <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
           {roles.map((r) => (
@@ -76,7 +76,7 @@ function Careers() {
       </Section>
 
       {/* HIRING MODEL */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn>
           <SectionHeading
             eyebrow="Hiring model"
@@ -98,9 +98,9 @@ function Careers() {
       </Section>
 
       {/* POST A JOB / REFERRAL */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn>
-          <div className="grid items-center gap-8 rounded-3xl border border-white/10 bg-linear-to-br from-[var(--surface-2)] to-[var(--background)] p-8 sm:p-12 lg:grid-cols-[1.2fr_1fr]">
+          <div className="grid items-center gap-8 rounded-3xl border border-white/10 bg-linear-to-br from-[var(--surface-2)] to-[var(--background)] p-2 lg:grid-cols-[1.2fr_1fr]">
             <div>
               <h3 className="font-display text-3xl font-bold tracking-tight">Don't see your role? <span className="text-gradient">Pitch us.</span></h3>
               <p className="mt-3 text-muted-foreground">If you're exceptional at something we'd benefit from, we'll build a role around you. Send a note describing the impact you want to have at DOVIX AI.</p>
@@ -116,7 +116,7 @@ function Careers() {
         </FadeIn>
       </Section>
 
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <FadeIn><SectionHeading eyebrow="Life at DOVIX" title={<>Why <span className="text-gradient">people stay</span>.</>} /></FadeIn>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {perks.map((p, i) => (

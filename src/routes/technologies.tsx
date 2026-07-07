@@ -34,7 +34,7 @@ function Technologies() {
         title={<>The <span className="text-gradient">full AI stack</span>, mastered.</>}
         subtitle="We pick the right tool for the job — never the trendy one. Here's what we use to ship to production."
       />
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="space-y-16">
           {groups.map((g, gi) => (
             <FadeIn key={g.t} delay={gi * 0.04}>

@@ -56,7 +56,9 @@ export function Footer() {
               Building the intelligent future with frontier AI, autonomous agents, and enterprise-grade automation for global organizations.
             </p>
             <p className="mt-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">Headquarters</p>
-            <p className="mt-2 text-sm text-foreground/80">B-18, 2nd Floor, Shiv Marg, Bani Park,<br />Jaipur, Rajasthan 302015, India</p>
+            <p className="mt-2 text-sm text-foreground/80">Registered Office :-B-18, 2nd Floor, Shiv Marg, Bani Park,<br />Jaipur, Rajasthan 302015, India</p>
+            <p className="mt-2 text-sm text-foreground/80">Branch Office :-  Plot no 43 -jugraj apartment shiv shankar colony gopal pura byepass road jaipur 302019
+            </p>
             <p className="mt-3 text-sm text-foreground/80">+91 91163 82399 · info@dovix.ai</p>
           </div>
 
@@ -83,7 +85,7 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} DOVIX AI Technologies. All rights reserved.</p>
-          
+
         </div>
       </div>
     </footer>
