@@ -210,7 +210,7 @@ const CaseStudies: FC = () => {
       </Section>
 
       {/* ================= CATEGORY FILTER ================= */}
-      <Section className="bg-surface/30">
+      <Section className="bg-surface/30 relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
             <button
@@ -229,7 +229,7 @@ const CaseStudies: FC = () => {
       </Section>
 
       {/* ================= CASE STUDIES ================= */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="text-center mb-16">
           <SectionHeading
             eyebrow="Showcase"
@@ -312,7 +312,7 @@ const CaseStudies: FC = () => {
       </Section>
 
       {/* ================= WHY DOVIX ================= */}
-      <Section className="bg-surface/30">
+      <Section className="bg-surface/30 relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="text-center mb-16">
           <SectionHeading
             eyebrow="The DOVIX Advantage"
@@ -321,7 +321,7 @@ const CaseStudies: FC = () => {
             align="center"
           />
         </div>
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 h-full">
           {[
             { title: "Business Growth", desc: "Solutions designed to accelerate revenue and operational efficiency.", icon: <TrendingUp className="h-8 w-8" /> },
             { title: "Enterprise Quality", desc: "Scalable architecture following industry best practices.", icon: <Building className="h-8 w-8" /> },
@@ -329,7 +329,7 @@ const CaseStudies: FC = () => {
             { title: "Trusted Security", desc: "Enterprise-grade security ensuring privacy and compliance.", icon: <ShieldCheck className="h-8 w-8" /> },
           ].map((item) => (
             <FadeIn key={item.title}>
-              <GlassCard className="p-8 hover:-translate-y-2 transition-all duration-300">
+              <GlassCard className="p-8 hover:-translate-y-2 transition-all duration-300 h-full">
                 <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6">
                   {item.icon}
                 </div>
@@ -342,7 +342,7 @@ const CaseStudies: FC = () => {
       </Section>
 
       {/* ================= FINAL CTA ================= */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="relative rounded-3xl overflow-hidden p-3 md:p-12 text-center bg-linear-to-br from-accent/20 to-accent-2/20 border border-accent/20">
           <GlowOrb className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-accent/10 blur-[100px]" />
           <div className="relative z-10">

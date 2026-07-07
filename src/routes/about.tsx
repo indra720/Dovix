@@ -107,7 +107,7 @@ const founders = [
 
 const About: FC = () => {
   return (
-    <div className="min-h-screen mt-6 bg-background text-foreground">
+    <div className="min-h-screen  bg-background text-foreground">
       {/* ================= HERO SECTION ================= */}
       <PageHero
         eyebrow="Welcome To Dovix"

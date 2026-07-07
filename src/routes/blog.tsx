@@ -32,8 +32,8 @@ function Blog() {
         title={<>Field notes from the <span className="text-gradient">AI frontier</span>.</>}
         subtitle="Essays, playbooks, and engineering notes from the DOVIX AI team."
       />
-      <Section>
-        <div className="grid gap-6 lg:grid-cols-3">
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((p, i) => (
             <FadeIn key={p.t} delay={i * 0.04}>
               <Link to="/blog" className="group block h-full overflow-hidden rounded-2xl border border-white/10 bg-white/3 transition hover:border-white/25 hover:bg-white/6">

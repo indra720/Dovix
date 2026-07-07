@@ -322,7 +322,7 @@ function Portfolio() {
           title={<>Building <GradientText>Digital Excellence</GradientText></>}
           subtitle="Explore our portfolio of enterprise software, AI-powered platforms, cloud infrastructure, mobile applications, cybersecurity solutions, and digital transformation projects delivered for startups, enterprises and global businesses."
         >
-          <div className="mt-12 grid lg:grid-cols-3 gap-8 ">
+          <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
             {[
               {
                 icon: Sparkles,
@@ -355,8 +355,8 @@ function Portfolio() {
       </div>
 
       {/* ================= COMPANY STATS ================= */}
-      <Section>
-        <div className="grid grid-cols-2 lg:grid-cols-6 gap-8">
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8">
           {[
             ["150+", "Projects"],
             ["98%", "Success"],
@@ -373,7 +373,7 @@ function Portfolio() {
       </Section>
 
       {/* ================= CATEGORY FILTER ================= */}
-      <Section className="bg-surface/30">
+      <Section className="bg-surface/30 relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
             <button
@@ -392,8 +392,8 @@ function Portfolio() {
       </Section>
 
       {/* ================= PROJECT GRID STARTS ================= */}
-      <Section>
-        <div className="text-center mb-6">
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12 ">
+        <div className="text-center w-full mb-6">
           <SectionHeading
             eyebrow="Our Work"
             title={<>Featured <GradientText>Projects</GradientText></>}
@@ -401,7 +401,7 @@ function Portfolio() {
             align="center"
           />
         </div>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project) => (
               <FadeIn key={project.title} className="flex h-full">
@@ -425,7 +425,7 @@ function Portfolio() {
                   </div>
 
                   {/* ================= CONTENT ================= */}
-                  <div className="p-6 flex flex-col flex-grow">
+                  <div className="p-6 flex flex-col grow">
                     <div className="flex items-center justify-between border-b border-white/10 pb-5 mb-6">
                       <div className="flex items-center gap-3">
                         <div className="rounded-full bg-accent/10 p-2 text-accent">
@@ -517,7 +517,7 @@ function Portfolio() {
       </Section>
 
       {/* ================= TECHNOLOGIES SECTION ================= */}
-      <Section className="bg-surface/20">
+      <Section className="bg-surface/20 relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="text-center mb-16">
           <SectionHeading eyebrow="Our Tech Stack" title={<>Mastering Modern <GradientText>Technologies</GradientText></>} subtitle="We use the latest, most reliable technologies to build scalable, secure and future-ready software solutions." align="center" />
         </div>
@@ -540,15 +540,15 @@ function Portfolio() {
       </Section>
 
       {/* ================= WHY DOVIX ================= */}
-      <Section>
-        <div className="grid md:grid-cols-2 xl:grid-cols-2 gap-20 items-center">
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12" >
+        <div className="grid  xl:grid-cols-2 gap-20 items-center">
           <FadeIn>
             <SectionHeading
               eyebrow="Why Choose Us"
               title={<>We Build <GradientText>Beyond Expectations</GradientText></>}
               subtitle="DOVIX combines innovation, engineering excellence, AI capabilities and modern architecture to deliver software that creates measurable business value."
             />
-            <div className="mt-12 space-y-6">
+            <div className="mt-12  space-y-6 ">
               {[
                 {
                   icon: Rocket,
@@ -573,7 +573,7 @@ function Portfolio() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="flex gap-6 p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300"
+                  className="flex  gap-6 p-6 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-300"
                 >
                   <div className="shrink-0 w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
                     <item.icon className="h-6 w-6" />
@@ -591,15 +591,15 @@ function Portfolio() {
           <FadeIn delay={0.1}>
             <div className="relative">
               <GlowOrb className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-accent/10 blur-[120px]" />
-              <GlassCard className="relative p-8 md:p-12">
-                <div className="grid gap-6">
+              <GlassCard className="relative p-8 ">
+                <div className="grid md:grid-cols-2 lg:grid-cols-1  gap-6">
                   {[
                     { icon: Zap, t: "10x", s: "Faster releases" },
                     { icon: ShieldCheck, t: "0", s: "Production incidents" },
                     { icon: Network, t: "60%", s: "OPEX reduction" },
                     { icon: Brain, t: "24/7", s: "Agent operations" },
                   ].map((m) => (
-                    <div key={m.s} className="flex items-center gap-5 p-5 rounded-2xl border border-white/5 bg-white/5">
+                    <div key={m.s} className="flex   items-center gap-5 p-5 rounded-2xl border border-white/5">
                       <m.icon className="h-6 w-6 text-accent" />
                       <div>
                         <div className="font-display text-2xl font-bold text-gradient">{m.t}</div>
@@ -615,7 +615,7 @@ function Portfolio() {
       </Section>
 
       {/* ================= CLIENT BENEFITS ================= */}
-      <Section className="bg-surface/20">
+      <Section className="bg-surface/20 relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <FadeIn>
             <SectionHeading
@@ -623,7 +623,7 @@ function Portfolio() {
               title={<>Why Businesses <GradientText>Trust DOVIX</GradientText></>}
               subtitle="Every solution we build focuses on innovation, performance, security, scalability and measurable business growth."
             />
-            <div className="mt-12 space-y-4">
+            <div className="mt-12 grid md:grid-cols-2  gap-2  space-y-2">
               {[
                 "AI Powered Automation",
                 "Cloud Native Architecture",
@@ -634,7 +634,7 @@ function Portfolio() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-6 shadow-sm"
+                  className="flex items-center gap-5 rounded-2xl border border-white/10 bg-white/5 p-2 h-full shadow-sm"
                 >
                   <CheckCircle className="h-7 w-7 text-accent shrink-0" />
                   <span className="font-semibold text-lg">{item}</span>
@@ -669,7 +669,7 @@ function Portfolio() {
       </Section>
 
       {/* ================= CLIENT SUCCESS ================= */}
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="text-center mb-16">
           <SectionHeading
             eyebrow="Proven Results"
@@ -686,8 +686,8 @@ function Portfolio() {
             { value: "24/7", label: "Technical Support" },
           ].map((item) => (
             <FadeIn key={item.label}>
-              <GlassCard className="p-10 text-center hover:border-accent/50 transition-all duration-500">
-                <h2 className="text-5xl font-black text-gradient mb-4">{item.value}</h2>
+              <GlassCard className="p-5 text-center hover:border-accent/50 transition-all duration-500">
+                <h2 className="text-3xl font-black text-gradient mb-4">{item.value}</h2>
                 <p className="text-lg font-semibold text-muted-foreground">{item.label}</p>
               </GlassCard>
             </FadeIn>
@@ -696,7 +696,7 @@ function Portfolio() {
       </Section>
 
       {/* ================= TESTIMONIALS ================= */}
-      <Section className="bg-surface/20">
+      <Section className="bg-surface/20 relative pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="text-center mb-16">
           <SectionHeading
             eyebrow="Client Voices"
@@ -742,7 +742,7 @@ function Portfolio() {
       </Section>
 
       {/* ================= FINAL CTA ================= */}
-      <Section className="relative overflow-hidden">
+      <Section className="relative overflow-hidden  pt-0 sm:pt-0 pb-10 sm:pb-12">
         <div className="absolute inset-0 -z-10">
           <GlowOrb className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-accent/10 blur-[120px]" />
           <GlowOrb className="top-0 right-0 w-1/2 h-1/2 bg-accent-2/10 blur-[100px]" />
@@ -750,7 +750,7 @@ function Portfolio() {
         <div className="max-w-5xl mx-auto text-center">
           <FadeIn>
             <Eyebrow>Ready to Transform?</Eyebrow>
-            <h2 className="text-5xl md:text-7xl font-black mt-8 mb-6">
+            <h2 className="text-3xl md:text-5xl font-black mt-8 mb-6">
               Let's Build <GradientText>Your Future</GradientText>
             </h2>
             <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">

@@ -42,9 +42,9 @@ function Solutions() {
         <CTAButton to="/contact">Find your solution</CTAButton>
       </PageHero>
 
-      <Section>
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12  ">
         <FadeIn>
-          <SectionHeading eyebrow="Solution catalog" title={<>Move from <span className="text-gradient">pilot to production</span>, faster.</>} />
+          <SectionHeading  eyebrow="Solution catalog" title={<>Move from <span className="text-gradient text-2xl sm:text-5xl">pilot to production</span>, faster.</>} />
         </FadeIn>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {solutions.map((s, i) => (

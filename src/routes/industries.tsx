@@ -54,11 +54,11 @@ function Industries() {
         title={<>AI tailored to <span className="text-gradient">your sector's</span> realities.</>}
         subtitle="Domain-deep teams that understand regulation, data gravity, and the operating rhythms of your industry."
       />
-      <Section>
-        <div className="grid gap-5 sm:grid-cols-2">
+      <Section className="relative pt-0 sm:pt-0 pb-10 sm:pb-12">
+        <div className="grid gap-3 sm:grid-cols-2  lg:grid-cols-3">
           {items.map((it, i) => (
             <FadeIn key={it.t} delay={i * 0.02}>
-              <GlassCard className="h-full">
+              <GlassCard className="h-full mx-auto">
                 <div className="flex items-start gap-4">
                   <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-linear-to-br from-[var(--accent)]/20 to-[var(--accent-2)]/20">
                     <it.icon className="h-6 w-6 text-accent" />

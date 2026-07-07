@@ -84,7 +84,7 @@ export function Navbar() {
             <img
               src={logo}
               alt="DOVIX AI"
-              className="h-24 w-40 drop-shadow-[0_0_22px_rgba(0,245,255,0.35)] "
+              className="h-16 sm:h-24 w-20 sm:w-40 drop-shadow-[0_0_22px_rgba(0,245,255,0.35)] "
             />
             <span className="sr-only">DOVIX AI</span>
           </Link>
@@ -178,7 +178,7 @@ export function Navbar() {
         </div>
 
         {open && (
-          <div className="mt-2 rounded-2xl border border-white/10 bg-[var(--background)]/95 p-4 backdrop-blur-xl xl:hidden">
+          <div className="mt-2 max-h-[calc(100vh-240px)] overflow-y-auto rounded-2xl border border-white/10 bg-[var(--background)]/95 p-4 backdrop-blur-xl xl:hidden">
             <div className="grid grid-cols-2 gap-1">
               {nav.map((n) => {
                 if ("children" in n) {
