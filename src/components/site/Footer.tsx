@@ -11,6 +11,7 @@ const cols = [
       { to: "/case-studies", label: "Case Studies" },
       { to: "/portfolio", label: "Portfolio" },
       { to: "/contact", label: "Contact" },
+      { to: "/projects", label: "Projects" },
     ],
   },
   {
