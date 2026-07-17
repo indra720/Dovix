@@ -31,7 +31,7 @@ export function VideoCard({
         {/* Play icon visible on hover */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none">
           <div className="h-16 w-16 rounded-full bg-white/20 backdrop-blur-sm grid place-items-center">
-            <Play className="h-8 w-8 text-white fill-current" />
+            <Play className="h-8 w-8 text-[#17489c] fill-current" />
           </div>
         </div>
 

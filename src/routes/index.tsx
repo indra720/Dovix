@@ -1,13 +1,57 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-
+import trust from "../assets/trustedimg.png";
+import { MdOutlinePerson2 } from "react-icons/md";
 import {
-  Bot, Brain, Sparkles, Zap, Shield, Network, Code2, Cpu, Database,
-  Stethoscope, Banknote, ShoppingBag, Factory, GraduationCap, Building2,
-  Workflow, Eye, MessageSquare, BarChart3, Star, ArrowRight, CheckCircle2,
+  Bot,
+  Brain,
+  Sparkles,
+  Zap,
+  Shield,
+  Network,
+  Code2,
+  Cpu,
+  Database,
+  Stethoscope,
+  Banknote,
+  ShoppingBag,
+  Factory,
+  GraduationCap,
+  Building2,
+  Workflow,
+  Eye,
+  MessageSquare,
+  BarChart3,
+  Star,
+  ArrowRight,
+  CheckCircle2,
 } from "lucide-react";
 import {
-  Section, SectionHeading, FadeIn, CTAButton, GlassCard, Stat, GlowOrb, Eyebrow,
+  SiPython,
+  SiTensorflow,
+  SiPytorch,
+  SiOpenid,
+  SiLangchain,
+  SiReact,
+  SiNodedotjs,
+  SiDocker,
+  SiMongodb,
+  SiMysql,
+  SiGoogle,
+  SiTrustpilot,
+} from "react-icons/si";
+import { AiOutlineGlobal } from "react-icons/ai";
+import { MdBusinessCenter } from "react-icons/md";
+import { FaMicrosoft, FaAmazon, FaStar } from "react-icons/fa6";
+import {
+  Section,
+  SectionHeading,
+  FadeIn,
+  CTAButton,
+  GlassCard,
+  Stat,
+  GlowOrb,
+  Eyebrow,
 } from "../components/site/primitives";
 import { VideoCard } from "../components/site/VideoCard";
 import { NeuralBackground } from "../components/site/NeuralBackground";
@@ -15,18 +59,28 @@ import { NeuralBackground } from "../components/site/NeuralBackground";
 import Ferrofluid from "../components/Ferrofluid.jsx";
 import { Contact } from "./contact";
 import logoAsset from "@/assets/dovix-logo.asset.json";
-import dovix1 from "../assets/Dovixai2.mp4"
-import dovix from "../assets/DovixVi.mp4"
+import rightsideimg from "../assets/rightsideimg.png";
+import erp from "../assets/erp.jpg";
+import chat from "../assets/aichat.jpg";
+import eco from "../assets/eco.jpg";
+import mobile from "../assets/mobile.jpg";
+import real from "../assets/real.jpg";
 import { useMemo, useState, useRef } from "react";
-
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "DOVIX AI — Enterprise AI, Agents & Automation" },
-      { name: "description", content: "DOVIX AI engineers frontier AI systems, autonomous agents, LLM platforms, and enterprise automation for global organizations." },
+      {
+        name: "description",
+        content:
+          "DOVIX AI engineers frontier AI systems, autonomous agents, LLM platforms, and enterprise automation for global organizations.",
+      },
       { property: "og:title", content: "DOVIX AI — Enterprise AI & Agents" },
-      { property: "og:description", content: "Frontier AI, autonomous agents, and enterprise automation, engineered for production." },
+      {
+        property: "og:description",
+        content:
+          "Frontier AI, autonomous agents, and enterprise automation, engineered for production.",
+      },
       { property: "og:url", content: "https://doovix-vision-forge.lovable.app/" },
     ],
     links: [{ rel: "canonical", href: "https://doovix-vision-forge.lovable.app/" }],
@@ -51,13 +105,41 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: Sparkles, title: "Generative AI", desc: "Custom LLMs, RAG pipelines, fine-tuning, and multimodal generation engineered for production." },
-  { icon: Bot, title: "Autonomous Agents", desc: "Goal-driven AI agents with tool-use, memory, and orchestration across CrewAI, LangGraph, and MCP." },
-  { icon: Workflow, title: "AI Automation", desc: "End-to-end business process automation that compounds productivity across every department." },
-  { icon: BarChart3, title: "AI Marketing", desc: "Generative campaigns, audience modeling, SEO automation, and creative pipelines that scale revenue." },
-  { icon: Brain, title: "Machine Learning", desc: "Deep learning, predictive analytics, and recommendation engines tailored to your domain." },
-  { icon: Eye, title: "Computer Vision", desc: "Detection, segmentation, OCR, and visual reasoning at scale, on the edge or in the cloud." },
-  { icon: MessageSquare, title: "Conversational AI", desc: "Multilingual voice and chat assistants powered by OpenAI, Claude, Gemini, and open models." },
+  {
+    icon: Sparkles,
+    title: "Generative AI",
+    desc: "Custom LLMs, RAG pipelines, fine-tuning, and multimodal generation engineered for production.",
+  },
+  {
+    icon: Bot,
+    title: "Autonomous Agents",
+    desc: "Goal-driven AI agents with tool-use, memory, and orchestration across CrewAI, LangGraph, and MCP.",
+  },
+  {
+    icon: Workflow,
+    title: "AI Automation",
+    desc: "End-to-end business process automation that compounds productivity across every department.",
+  },
+  {
+    icon: BarChart3,
+    title: "AI Marketing",
+    desc: "Generative campaigns, audience modeling, SEO automation, and creative pipelines that scale revenue.",
+  },
+  {
+    icon: Brain,
+    title: "Machine Learning",
+    desc: "Deep learning, predictive analytics, and recommendation engines tailored to your domain.",
+  },
+  {
+    icon: Eye,
+    title: "Computer Vision",
+    desc: "Detection, segmentation, OCR, and visual reasoning at scale, on the edge or in the cloud.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Conversational AI",
+    desc: "Multilingual voice and chat assistants powered by OpenAI, Claude, Gemini, and open models.",
+  },
 ];
 
 const industries = [
@@ -70,33 +152,27 @@ const industries = [
 ];
 
 const stack = [
-  "OpenAI", "Anthropic", "Gemini", "Llama", "DeepSeek", "Mistral",
-  "LangChain", "LangGraph", "CrewAI", "Qdrant", "Pinecone", "Weaviate",
-  "PyTorch", "TensorFlow", "AWS", "Azure", "GCP", "Kubernetes",
-];
-
-const products = [
-  { name: "AI CRM", desc: "Self-driving pipelines, lead scoring, and conversational sales." },
-  { name: "AI ERP", desc: "Autonomous operations across supply, finance, and people." },
-  { name: "AI Helpdesk", desc: "Tier-1 deflection with agentic resolution and human handoff." },
-  { name: "AI Analytics", desc: "Natural-language BI over your warehouse with verified insights." },
-];
-
-const process = [
-  { step: "01", title: "Discover", desc: "We map your data, processes, and the highest-leverage AI opportunities." },
-  { step: "02", title: "Design", desc: "Architecture, model selection, evaluation harness, and guardrails." },
-  { step: "03", title: "Build", desc: "Production-grade engineering with CI/CD, observability, and red-teaming." },
-  { step: "04", title: "Scale", desc: "MLOps, continuous evaluation, and compounding model improvements." },
-];
-
-const testimonials = [
-  { quote: "DOVIX AI shipped a multi-agent procurement system that paid for itself in 90 days.", who: "VP Operations, Fortune 500 Manufacturer" },
-  { quote: "Their LLM platform is the most disciplined eval pipeline I've seen outside frontier labs.", who: "Chief Data Officer, Global Bank" },
-  { quote: "We replaced six SaaS tools with one DOVIX agent stack. Velocity is unrecognizable.", who: "Founder, Series B Healthtech" },
+  "OpenAI",
+  "Anthropic",
+  "Gemini",
+  "Llama",
+  "DeepSeek",
+  "Mistral",
+  "LangChain",
+  "LangGraph",
+  "CrewAI",
+  "Qdrant",
+  "Pinecone",
+  "Weaviate",
+  "PyTorch",
+  "TensorFlow",
+  "AWS",
+  "Azure",
+  "GCP",
+  "Kubernetes",
 ];
 
 function Home() {
-
   const particles = useMemo(
     () =>
       Array.from({ length: 12 }).map(() => ({
@@ -106,7 +182,7 @@ function Home() {
         speed: Math.random() * 10 + 5,
         delay: Math.random() * 5,
       })),
-    []
+    [],
   );
 
   const gridBlocks = useMemo(
@@ -116,500 +192,514 @@ function Home() {
         row: 1 + (i % 2),
         delay: i * 0.15,
       })),
-    []
+    [],
   );
-  
+
+  const services = [
+    {
+      icon: Brain,
+      title: "AI Development",
+      description:
+        "Custom AI solutions, machine learning models, deep learning, predictive analytics and more.",
+    },
+    {
+      icon: Bot,
+      title: "AI Agents",
+      description:
+        "Intelligent AI agents and chatbots to automate conversations, support and business workflows.",
+    },
+    {
+      icon: Workflow,
+      title: "AI Automation",
+      description:
+        "Process automation using AI & RPA to improve efficiency and reduce operational costs.",
+    },
+    {
+      icon: MdBusinessCenter,
+      title: "AI ERP Solutions",
+      description:
+        "Smart ERP systems integrated with AI for data-driven decision-making and business intelligence.",
+    },
+    {
+      icon: Code2,
+      title: "Software Development",
+      description: "Custom software development for web, desktop, enterprise and cloud platforms.",
+    },
+    {
+      icon: Cpu,
+      title: "Mobile App Development",
+      description:
+        "Native & cross-platform mobile apps for iOS and Android with modern technologies.",
+    },
+    {
+      icon: AiOutlineGlobal,
+      title: "Web Development",
+      description: "Responsive, scalable and secure web applications using latest technologies.",
+    },
+    {
+      icon: BarChart3,
+      title: "AI Digital Marketing",
+      description:
+        "AI-powered marketing strategies, SEO, ads, analytics & automation to grow your brand.",
+    },
+  ];
+
+  const industries = [
+    { icon: Stethoscope, name: "Healthcare" },
+    { icon: Banknote, name: "Finance" },
+    { icon: ShoppingBag, name: "Retail" },
+    { icon: Factory, name: "Manufacturing" },
+    { icon: GraduationCap, name: "Education" },
+    { icon: Building2, name: "Real Estate" },
+    { icon: Network, name: "Logistics" },
+    { icon: Zap, name: "Hospitality" },
+    { icon: Shield, name: "Government" },
+    { icon: Sparkles, name: "And More" },
+  ];
+
+  const whyChoose = [
+    "150+ AI-Powered Software Solutions",
+    "Custom-Built for Every Industry",
+    "Expert Team with End-to-End Development",
+    "End-to-End Commitment 100% Satisfaction",
+    "Cutting Edge Technologies",
+    "Domain Knowledge",
+    "24/7 Support",
+    "Focus",
+  ];
+
+  const projects = [
+    {
+      image: erp, // Replace with real images
+      title: "AI-Powered ERP System",
+      category: "Manufacturing",
+    },
+    {
+      image: chat,
+      title: "AI Chatbot Platform",
+      category: "Healthcare",
+    },
+    {
+      image: eco,
+      title: "E-Commerce Platform",
+      category: "Retail",
+    },
+    {
+      image: mobile,
+      title: "Mobile Banking App",
+      category: "Finance",
+    },
+    {
+      image: real,
+      title: "Real Estate Portal",
+      category: "Real Estate",
+    },
+  ];
+
+  const technologies = [
+    { icon: SiPython, name: "Python", color: "text-yellow-400" },
+    { icon: SiTensorflow, name: "TensorFlow", color: "text-orange-500" },
+    { icon: SiPytorch, name: "PyTorch", color: "text-red-500" },
+    { icon: SiOpenid, name: "OpenAI", color: "text-green-400" },
+    { icon: SiLangchain, name: "LangChain", color: "text-cyan-400" },
+    { icon: SiReact, name: "React", color: "text-sky-400" },
+    { icon: SiNodedotjs, name: "Node.js", color: "text-green-500" },
+    { icon: FaAmazon, name: "AWS", color: "text-orange-400" },
+    { icon: FaMicrosoft, name: "Azure", color: "text-blue-500" },
+    { icon: SiDocker, name: "Docker", color: "text-blue-400" },
+    { icon: SiMongodb, name: "MongoDB", color: "text-green-500" },
+    { icon: SiMysql, name: "MySQL", color: "text-blue-400" },
+  ];
+
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-background">
-        {/* <NeuralBackground /> */}
-        <div className="mx-auto w-full max-w-325 px-6   pb-20 pt-56 sm:pt-48 text-center relative z-10">
-          <FadeIn>
-            <Eyebrow >Frontier AI · Enterprise Grade · Globally Trusted</Eyebrow>
-          </FadeIn>
-
-          <FadeIn delay={0.05}>
-            <div className="relative mt-5">
-              <div className="absolute inset-0 -z-10 overflow-hidden">
-                {particles.map((p, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute rounded-full bg-accent/30"
-                    style={{
-                      width: p.size,
-                      height: p.size,
-                      top: `${p.top}%`,
-                      left: `${p.left}%`,
-                      willChange: "transform, opacity",
-                    }}
-                    animate={{
-                      y: [0, -100, 0],
-                      opacity: [0.1, 0.7, 0.1],
-                    }}
-                    transition={{
-                      duration: p.speed / 8,
-                      repeat: Infinity,
-                      delay: p.delay,
-                      ease: "linear",
-                    }}
-                  />
-                ))}
+      <section className="relative overflow-hidden bg-[#07111f]">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 pt-32 pb-20 lg:pt-40 lg:pb-24">
+          <div className="grid items-center gap-14 lg:grid-cols-2">
+            {/* LEFT */}
+            <div>
+              <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm backdrop-blur">
+                🚀 AI Powered | Future Ready
               </div>
 
-              <h1 className="relative font-display text-2xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-                Building the <span className="text-gradient">Intelligent Future</span>
-                <br className="hidden sm:block" /> with Artificial Intelligence
+              <h1 className="mt-8 text-4xl font-bold leading-tight ">
+                <span className="text-white">Intelligent Solutions.</span>
+
+                <br />
+
+                <span className="text-lime-400">Real-World Impact.</span>
               </h1>
-            </div>
-          </FadeIn>
 
-          <FadeIn delay={0.1}>
-            <p className="mx-auto mt-7 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-              DOVIX AI partners with ambitious organizations to design, build, and scale
-              production-grade AI systems — from autonomous agents to enterprise LLM platforms.
-            </p>
-          </FadeIn>
+              <p className="mt-8 max-w-xl text-lg leading-8 text-gray-300">
+                DOVIX AI is a global AI, software development, ERP and digital transformation
+                company helping businesses automate operations, modernize systems and accelerate
+                growth through next-generation technology.
+              </p>
 
-          <FadeIn delay={0.15}>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <CTAButton to="/contact">Start an AI Project</CTAButton>
-              <CTAButton to="/services" variant="ghost">Explore Services</CTAButton>
-            </div>
-          </FadeIn>
+              <div className="mt-10 flex flex-wrap gap-5">
+                <button className="rounded-xl bg-gradient-to-r from-blue-600 to-lime-500 px-8 py-4 font-semibold text-white transition hover:scale-105">
+                  Explore Our Services →
+                </button>
 
-          {/* hero visual */}
-          <FadeIn delay={0.25}>
-            <div className="relative mx-auto mt-20 max-w-5xl">
-              <div className="glass-strong rounded-3xl p-2 shadow-[0_30px_120px_-30px_rgba(109,93,254,0.55)]">
-                <div className="relative aspect-video overflow-hidden rounded-2xl bg-linear-to-br from-surface-2 to-background">
-                  <div className="absolute inset-0 bg-grid opacity-40" />
+                <button className="rounded-xl border border-white/20 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur transition hover:bg-white/10">
+                  Book a Consultation
+                </button>
+              </div>
 
-                  <div className="absolute inset-0 grid grid-cols-12 grid-rows-6">
-                    {gridBlocks.map((b, i) => (
-                      <motion.div
-                        key={i}
-                        className="m-2 rounded-lg border border-white/10 bg-white/3"
-                        style={{
-                          willChange: "opacity",
-                          gridColumn: `span ${b.span}`,
-                          gridRow: `span ${b.row}`,
-                        }}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: [0.1, 0.6, 0.1] }}
-                        transition={{ duration: 3, repeat: Infinity, delay: b.delay }}
-                      />
-                    ))}
-                  </div>
+              {/* Stats */}
 
-                  <div className="absolute inset-0 grid place-items-center">
-                    <div className="relative w-full h-full">
-                      <video
-                        src={dovix1}
-                        autoPlay
-                        loop
-                        playsInline
-                        preload="auto"
-                        controls
-                        className="h-full w-full object-cover rounded-3xl"
-                      />
-                      <div className="absolute inset-0 rounded-3xl bg-linear-to-t from-black/40 to-transparent" />
-                    </div>
-                  </div>
+              <div className="mt-6 grid grid-cols-2 gap-8 sm:grid-cols-4">
+                <div>
+                  <h3 className="text-3xl font-bold text-white">150+</h3>
 
-                  {[
-                    { p: "top-2 left-4", t: "RAG · Vector Index" },
-                    { p: "top-2 right-4", t: "Agents · Tool-Use" },
-                    { p: "bottom-2 left-4", t: "Eval · Guardrails" },
-                    { p: "bottom-2 right-4", t: "Observability" },
-                  ].map((x) => (
-                    <div
-                      key={x.t}
-                      className={`absolute ${x.p} rounded-lg border border-white/10 bg-black/40 px-3 py-1 text-xs text-foreground/80 backdrop-blur`}
-                    >
-                      {x.t}
-                    </div>
-                  ))}
+                  <p className="mt-2 text-gray-400">AI Software Solutions</p>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl font-bold text-white">20+</h3>
+
+                  <p className="mt-2 text-gray-400">Industries Served</p>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl font-bold text-white">Global</h3>
+
+                  <p className="mt-2 text-gray-400">Clients Worldwide</p>
+                </div>
+
+                <div>
+                  <h3 className="text-3xl font-bold text-white">100%</h3>
+
+                  <p className="mt-2 text-gray-400">Customer Focus</p>
                 </div>
               </div>
             </div>
-          </FadeIn>
 
-          <FadeIn delay={0.3}>
-            <div className="mx-auto mt-20 grid max-w-4xl grid-cols-2 gap-10 sm:grid-cols-4">
-              <Stat value="50+" label="Enterprise clients" />
-              <Stat value="10+" label="Countries served" />
-              <Stat value="98%" label="Client retention" />
-              <Stat value="50M+" label="AI calls served monthly" />
+            {/* RIGHT */}
+            <div className="relative flex items-center justify-center">
+              <img
+                src={rightsideimg}
+                alt="Hero Feature"
+                className="w-full h-64 md:h-80 lg:h-full object-cover rounded-3xl shadow-2xl"
+              />
             </div>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
       {/* TRUSTED BY */}
-      <section className="border-y border-white/5 bg-white/2 py-6">
-        <div className="mx-auto w-full max-w-375 px-6 sm:px-10">
-          <p className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            Trusted by ambitious teams across India & beyond
-          </p>
-          <div className="mt-8 overflow-hidden">
-            <div className="flex w-max animate-marquee gap-14 text-2xl font-display font-semibold text-foreground/50">
-              {[...Array(2)].flatMap((_, k) =>
-                ["Rajana Group", "Skyline Realty", "Maharshi Diagnostics", "Pink City Foods", "Marudhar Steel", "Jaipur Gems", "Aravalli Cement", "Saraf Jewellers", "Bani Park Hospital", "Rajasthan Logistics", "Shekhawat Motors", "Thar Energy"].map((n) => (
-                  <span key={`${k}-${n}`} className="whitespace-nowrap">{n}</span>
-                ))
-              )}
+      <section className="bg-[#0A1428] py-20 px-6 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+              OUR{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-lime-500 bg-clip-text text-transparent">
+                AI-POWERED{" "}
+              </span>{" "}
+              SERVICES
+            </h2>
+            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+              End-to-end AI, software and digital solutions to transform your business.
+            </p>
+          </div>
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="group bg-[#13213A] hover:bg-[#1A2A4A] border border-white/10 hover:border-[#4A90E2]/30 rounded-2xl p-8 transition-all duration-300 flex flex-col h-full"
+              >
+                <div className="mb-6 flex justify-center items-center text-[#429cb3] w-20 h-20 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-full h-full" />
+                </div>
+
+                <h3 className="text-xl font-semibold text-white mb-3 text-center">
+                  {service.title}
+                </h3>
+
+                <p className="text-slate-400 leading-relaxed text-[15px] text-center">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom CTA Section */}
+          <div className="mt-16 grid lg:grid-cols-12 gap-8 items-stretch">
+            {/* IT Consulting Card */}
+            <div className="lg:col-span-4 bg-[#13213A] border border-white/10 rounded-3xl p-8 flex flex-col justify-center">
+              <div className="text-[#4A90E2]  flex justify-center text-3xl"><MdOutlinePerson2 size={48} /></div>
+              <h3 className="text-xl font-semibold text-white mb-2 text-center">IT Consulting</h3>
+              <p className="text-slate-400 leading-relaxed text-center text-sm">
+                Strategic IT consulting to help you innovate, optimize and achieve business goals.
+              </p>
+            </div>
+
+            {/* Ready to Transform CTA */}
+            <div className="lg:col-span-8 bg-gradient-to-br from-[#13213A] to-[#0F1B2E] border border-white/10 rounded-3xl p-8 overflow-hidden flex items-center justify-between">
+              <div className="max-w-lg z-10">
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Ready to Transform Your Business?
+                </h3>
+                <p className="text-slate-400 text-sm mb-6">
+                  Let’s build intelligent solutions that drive growth and efficiency.
+                </p>
+                <button className="bg-gradient-to-r from-blue-600 to-lime-500 hover:opacity-90 text-white font-semibold px-6 py-3 rounded-xl flex items-center gap-2 transition-all hover:scale-105 text-sm">
+                  Let’s Talk
+                  <span className="text-lg">→</span>
+                </button>
+              </div>
+
+              {/* Decorative 3D Cubes (Right Side) */}
+              <div className="hidden lg:block w-80 h-full opacity-80">
+                <img src={trust} alt="AI Cubes" className="w-full h-full object-cover" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* VIDEO SECTIONS — three highlights */}
-      <Section className="pt-10!">
-        <FadeIn>
-          <SectionHeading
-            eyebrow="See it in motion"
-            title={<>Three ways DOVIX AI <span className="text-gradient">delivers value</span>.</>}
-            subtitle="Short product walkthroughs of the systems we ship most often — from agents to vision to marketing."
-          />
-        </FadeIn>
-        <div className="mt-6 grid gap-6 lg:grid-cols-3">
-          <FadeIn delay={0.05}>
-            <VideoCard
-              title="Autonomous Agents in action"
-              caption="A live look at a multi-agent operations copilot."
-              src="https://cdn.pixabay.com/video/2024/03/15/204306-925355529_large.mp4"
-              poster="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80&auto=format&fit=crop"
-            />
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <VideoCard
-              title="AI Marketing pipelines"
-              caption="Generative campaigns, audience modeling, and SEO automation."
-              src="https://cdn.pixabay.com/video/2023/10/06/184244-872881183_large.mp4"
-              poster="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop"
-            />
-          </FadeIn>
-          <FadeIn delay={0.15}>
-            <VideoCard
-              title="Computer Vision deployments"
-              caption="Real-time detection, OCR, and visual reasoning at scale."
-              src="https://cdn.pixabay.com/video/2022/12/16/143341-781536165_large.mp4"
-              poster="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1200&q=80&auto=format&fit=crop"
-            />
-          </FadeIn>
+      <section className="bg-[#0A1428] py-6 px-6 border-t border-white/10">
+        <div className="w-full mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
+              INDUSTRIES{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-lime-500 bg-clip-text text-transparent">
+                WE SERVE
+              </span>
+            </h2>
+            <p className="text-slate-400 text-lg">Powering innovation across diverse industries.</p>
+          </div>
+
+          {/* Industries Grid / Scroll */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10">
+            {industries.map((industry, index) => (
+              <div
+                key={index}
+                className="group flex flex-col items-center justify-center bg-[#13213A] hover:bg-[#1A2A4A] border border-white/10 hover:border-[#4A90E2] p-6 transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="mb-4 text-[#787fff] group-hover:scale-110 transition-transform duration-300">
+                  <industry.icon className="h-10 w-10" />
+                </div>
+                <p className="text-white font-medium text-center text-sm">{industry.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
 
       {/* COMPANY PROFILE VIDEO */}
-      <Section className="pt-2!">
-        <FadeIn>
-          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] ">
-            <VideoCard
-              title="DOVIX AI — Company Profile"
-              caption="Who we are, what we build, and the leaders we partner with."
-              src="https://cdn.pixabay.com/video/2024/05/22/212447_large.mp4"
-              poster="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80&auto=format&fit=crop"
-            />
-            <div className="h-full rounded-3xl border border-white/10 bg-linear-to-br from-surface-2 to-background p-8 sm:p-12 ">
-              <Eyebrow>Company profile</Eyebrow>
-              <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-                A frontier AI studio, <span className="text-gradient">born in Jaipur</span>, building for the world.
-              </h2>
-              <p className="mt-4 text-muted-foreground">
-                We're a tight team of AI researchers, product engineers, and forward-deployed
-                specialists. We ship production-grade AI for enterprises across India, the GCC,
-                Europe, and North America — from autonomous agents to vision platforms.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <CTAButton to="/about">More about us</CTAButton>
-                <CTAButton to="/contact" variant="ghost">Book a discovery call</CTAButton>
-              </div>
-            </div>
+      <section className="bg-[#0A1428] py-6 px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
+              WHY CHOOSE{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-lime-500 bg-clip-text text-transparent">
+                DOVIX AI?
+              </span>
+            </h2>
           </div>
-        </FadeIn>
-      </Section>
+
+          {/* Benefits Grid */}
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-12 gap-y-8">
+            {whyChoose.map((item, index) => (
+              <div key={index} className="flex gap-4 group">
+                <div className="mt-1 flex-shrink-0">
+                  <div className="w-7 h-7 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-400/30 group-hover:bg-emerald-500/30 transition-colors">
+                    <span className="text-emerald-400 text-xl">✓</span>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-white text-[17px] leading-relaxed">{item}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* SERVICES */}
-      <Section className="pt-0!">
-        <FadeIn>
-          <SectionHeading
-            eyebrow="What we do"
-            title={<>End-to-end AI, engineered for <span className="text-gradient">production</span>.</>}
-            subtitle="From generative AI and autonomous agents to deep learning and computer vision — we build the systems that move enterprise needles."
-          />
-        </FadeIn>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <FadeIn key={s.title} delay={i * 0.05}>
-              <GlassCard className="h-full">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-linear-to-br from-accent/20 to-accent-2/20 text-accent">
-                  <s.icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-5 font-display text-xl font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-                <Link to="/services" className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent hover:gap-2 transition-all">
-                  Explore {s.title.toLowerCase()} <ArrowRight className="h-4 w-4" />
-                </Link>
-              </GlassCard>
-            </FadeIn>
-          ))}
-        </div>
-      </Section>
+      <section className="bg-[#0A1428] py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white">
+                OUR WORK{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-lime-500 bg-clip-text text-transparent">
+                  SPEAKS
+                </span>
+              </h2>
+              <p className="text-slate-400 mt-3 text-lg">
+                Delivering intelligent solutions that create real impact.
+              </p>
+            </div>
 
-      {/* WHY DOVIX */}
-      <Section className="pt-0!">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-          <FadeIn>
-            <SectionHeading
-              eyebrow="Why DOVIX AI"
-              title={<>A frontier-lab mindset with <span className="text-gradient">enterprise discipline</span>.</>}
-              subtitle="We combine research-grade engineering with the pragmatism of shipping into regulated, high-stakes environments."
-            />
-            <div className="mt-6 space-y-4">
-              {[
-                ["Research-grade engineering", "Eval-first development, red-teaming, and continuous benchmarking baked into every system."],
-                ["Domain-deep teams", "Vertical squads with real expertise in healthcare, finance, retail, and government."],
-                ["Composable AI platforms", "Modular RAG, agents, and MCP-server architectures you can extend in-house."],
-                ["Trust and compliance", "SOC 2 Type II ready, HIPAA, GDPR, and ISO 27001 aligned by default."],
-              ].map(([t, d]) => (
-                <div key={t} className="flex gap-4">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[var(--highlight)]" />
-                  <div>
-                    <p className="font-semibold">{t}</p>
-                    <p className="text-sm text-muted-foreground">{d}</p>
-                  </div>
+            <button className="bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-500 hover:to-emerald-400 px-8 py-3.5 rounded-2xl text-white font-semibold flex items-center gap-2 transition-all hover:scale-105">
+              View All Projects
+              <span>→</span>
+            </button>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="group bg-[#13213A] rounded-3xl overflow-hidden border border-white/10 hover:border-emerald-500/30 transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                 </div>
-              ))}
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.1}>
-            <div className="glass-strong rounded-3xl p-8">
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { icon: Zap, t: "10x", s: "Faster releases" },
-                  { icon: Shield, t: "0", s: "Production incidents" },
-                  { icon: Network, t: "60%", s: "OPEX reduction" },
-                  { icon: Cpu, t: "24/7", s: "Agent operations" },
-                ].map((m) => (
-                  <div key={m.s} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                    <m.icon className="h-5 w-5 text-accent" />
-                    <div className="mt-3 font-display text-3xl font-bold text-gradient">{m.t}</div>
-                    <p className="mt-1 text-xs text-muted-foreground">{m.s}</p>
-                  </div>
-                ))}
+
+                <div className="flex h-28 flex-col justify-between p-6">
+                  <h3 className="line-clamp-2 min-h-[56px] text-lg font-semibold leading-7 text-white">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-sm font-medium text-emerald-400">{project.category}</p>
+                </div>
               </div>
-              <div className="mt-6 rounded-2xl border border-white/10 bg-linear-to-br from-(--accent)/10 to-(--accent-2)/10 p-5">
-                <p className="font-display text-sm uppercase tracking-[0.2em] text-accent">Operating principle</p>
-                <p className="mt-2 text-lg font-semibold">Models are commodities. <span className="text-gradient">Systems compound.</span></p>
-              </div>
-            </div>
-          </FadeIn>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
+      {/* WHY DOVIX */}
+      <section className="bg-[#0A1428] py-16 px-6 border-t border-white/10">
+        <div className="max-w-7xl mx-auto">
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
+              TECHNOLOGIES{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-lime-500 bg-clip-text text-transparent">
+                WE WORK WI
+              </span>
+              TH
+            </h2>
+          </div>
+
+          {/* Technologies Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-8 md:gap-10 items-center justify-items-center">
+            {technologies.map((tech, index) => {
+              const Icon = tech.icon;
+              return (
+                <div
+                  key={index}
+                  className="group flex flex-col items-center justify-center gap-3 hover:scale-110 transition-all duration-300"
+                >
+                  <div
+                    className="text-5xl md:text-6xl transition-transform group-hover:-rotate-6"
+                    style={{ color: "#429cb3" }}
+                  >
+                    <Icon />
+                  </div>
+                  <p className="text-slate-300 text-sm font-medium text-center">{tech.name}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* PRODUCTS */}
-      <Section className="pt-0! ">
-        <FadeIn>
-          <SectionHeading
-            eyebrow="Products"
-            title={<>Pre-built AI software, <span className="text-gradient">ready to deploy</span>.</>}
-            subtitle="A modular suite of AI-native business applications that ship in weeks, not quarters."
-          />
-        </FadeIn>
-        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((p, i) => (
-            <FadeIn key={p.name} delay={i * 0.05}>
-              <GlassCard className="h-full">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-xs text-accent">
-                  <Sparkles className="h-3 w-3" /> Dovix Suite
+      <section className="bg-[#0A1428] py-12 px-6 border-t border-white/10">
+        <div className="max-w-7xl mx-auto">
+          {/* Testimonial Card */}
+          <div className="bg-[#13213A] rounded-[2rem] p-6 md:p-8 border border-white/5 relative overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-[60px] rounded-full"></div>
+
+            <div className="relative z-10 flex flex-col items-center text-center">
+              {/* Heading */}
+              <h2 className="text-xl md:text-2xl font-bold text-white mb-4">
+                WHAT OUR{" "}
+                <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+                  CLIENTS SAY
+                </span>
+              </h2>
+
+              <div className="text-3xl mb-2">💬</div>
+
+              <p className="text-sm md:text-base leading-relaxed text-slate-300 mb-6 max-w-xl">
+                DOVIX AI transformed our business with their AI solutions. Their team is
+                professional, innovative and always delivers beyond expectations.
+              </p>
+
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-8 h-8 rounded-full bg-slate-700"></div>
+                <p className="text-emerald-400 font-semibold text-[10px]">
+                  — CEO, Leading Manufacturing Company
+                </p>
+              </div>
+
+              {/* Client Logos with Slider inside the card */}
+              <div className="w-full relative pt-4 border-t border-white/5">
+                <div className="flex items-center justify-center gap-6">
+                  <button className="w-8 h-8 rounded-full border border-white/10 hover:border-emerald-500/50 flex items-center justify-center text-xs text-white transition hover:bg-emerald-500/10 hover:text-emerald-400">
+                    ←
+                  </button>
+
+                  <div className="flex items-center gap-8 opacity-70">
+                    <SiGoogle className="text-2xl text-blue-400" />
+
+                    <span className="text-lg font-bold text-white/80">Clutch</span>
+                    <span className="text-lg font-bold text-white/80">GoodFirms</span>
+                    <span className="flex items-center justify-center gap-1">
+                      <SiTrustpilot className="text-2xl text-emerald-400" />
+                      TrustPilot
+                    </span>
+                  </div>
+
+                  <button className="w-8 h-8 rounded-full border border-white/10 hover:border-emerald-500/50 flex items-center justify-center text-xs text-white transition hover:bg-emerald-500/10 hover:text-emerald-400">
+                    →
+                  </button>
                 </div>
-                <h3 className="mt-4 font-display text-2xl font-bold">{p.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-              </GlassCard>
-            </FadeIn>
-          ))}
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="mt-10 text-center">
-          <CTAButton to="/products" variant="ghost">See all products</CTAButton>
-        </div>
-      </Section>
+      </section>
 
       {/* INDUSTRIES */}
-      <Section className="pt-0! ">
-        <FadeIn>
-          <SectionHeading
-            eyebrow="Industries"
-            title={<>AI built for the realities of <span className="text-gradient">your sector</span>.</>}
-          />
-        </FadeIn>
-        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {industries.map((i, k) => (
-            <FadeIn key={i.name} delay={k * 0.04}>
-              <Link
-                to="/industries"
-                className="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-8 text-center transition hover:border-accent/40 hover:bg-white/[0.06]"
-              >
-                <i.icon className="h-7 w-7 text-accent transition group-hover:scale-110" />
-                <span className="text-sm font-medium">{i.name}</span>
-              </Link>
-            </FadeIn>
-          ))}
-        </div>
-      </Section>
+      <section className="relative overflow-hidden h-[50vh] max-w-7xl mx-auto rounded-2xl">
+        {/* Gradient Background */}
+        <div className="bg-gradient-to-r from-blue-600 to-lime-500 py-20 px-6 relative">
+          {/* Background Network Pattern */}
+          <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-[length:30px_30px] opacity-20"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(#ffffff_0.8px,transparent_1px)] bg-[length:60px_60px] opacity-10"></div>
 
-      {/* TECH STACK */}
-      <Section className="pt-0!">
-        <FadeIn>
-          <SectionHeading
-            eyebrow="Technology"
-            title={<>The <span className="text-gradient">full AI stack</span>, mastered.</>}
-            subtitle="From foundation models and vector databases to MLOps and cloud — we use the right tool, never the trendy one."
-          />
-        </FadeIn>
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
-          {stack.map((s) => (
-            <span key={s} className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-foreground/80 transition hover:border-accent/40 hover:text-accent">
-              {s}
-            </span>
-          ))}
-        </div>
-      </Section>
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Let&apos;s Build the Future Together
+            </h2>
 
-      {/* PROCESS */}
-      <Section className="pt-0!">
-        <FadeIn>
-          <SectionHeading
-            eyebrow="Our process"
-            title={<>From idea to <span className="text-gradient">intelligent system</span> in weeks.</>}
-          />
-        </FadeIn>
-        <div className="relative mt-6 grid gap-6 lg:grid-cols-4">
-          {process.map((p, i) => (
-            <FadeIn key={p.step} delay={i * 0.07}>
-              <div className="relative h-full rounded-2xl border border-white/10 bg-linear-to-b from-white/[0.06] to-transparent p-6">
-                <div className="font-display text-5xl font-bold text-gradient">{p.step}</div>
-                <h3 className="mt-4 text-lg font-semibold">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </Section>
+            <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+              Have a project in mind? Let&apos;s turn your ideas into intelligent solutions.
+            </p>
 
-      {/* CASE STUDIES preview */}
-      <Section className="pt-0!">
-        <FadeIn>
-          <SectionHeading
-            eyebrow="Case studies"
-            title={<>Outcomes our clients <span className="text-gradient">put in their board decks</span>.</>}
-          />
-        </FadeIn>
-        <div className="mt-6 grid gap-6 lg:grid-cols-3">
-          {[
-            { sector: "Healthcare", metric: "42%", desc: "Reduction in diagnostic turnaround at a 12-hospital network using our vision platform." },
-            { sector: "Finance", metric: "$210M", desc: "Annual fraud loss avoided with our real-time multi-agent anomaly system." },
-            { sector: "Retail", metric: "3.4x", desc: "Conversion lift from our agentic personalization engine across 1,200 stores." },
-          ].map((c, i) => (
-            <FadeIn key={c.sector} delay={i * 0.07}>
-              <GlassCard className="h-full">
-                <p className="text-xs uppercase tracking-[0.2em] text-accent">{c.sector}</p>
-                <p className="mt-4 font-display text-5xl font-bold text-gradient">{c.metric}</p>
-                <p className="mt-4 text-sm text-muted-foreground">{c.desc}</p>
-                <Link to="/case-studies" className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-foreground hover:text-accent">
-                  Read case study <ArrowRight className="h-4 w-4" />
-                </Link>
-              </GlassCard>
-            </FadeIn>
-          ))}
-        </div>
-      </Section>
-
-      {/* TESTIMONIALS */}
-      <Section className="pt-0! ">
-        <FadeIn>
-          <SectionHeading
-            eyebrow="What leaders say"
-            title={<>Trusted by operators who <span className="text-gradient">ship at scale</span>.</>}
-          />
-        </FadeIn>
-        <div className="mt-6 grid gap-6 lg:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <FadeIn key={t.who} delay={i * 0.07}>
-              <GlassCard className="h-full">
-                <div className="flex gap-1 text-accent">
-                  {Array.from({ length: 5 }).map((_, k) => <Star key={k} className="h-4 w-4 fill-current" />)}
-                </div>
-                <p className="mt-4 text-lg leading-relaxed">"{t.quote}"</p>
-                <p className="mt-6 text-xs uppercase tracking-[0.2em] text-muted-foreground">{t.who}</p>
-              </GlassCard>
-            </FadeIn>
-          ))}
-        </div>
-      </Section>
-
-      {/* CTA */}
-      <Section className="pt-0!">
-        <FadeIn>
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-[var(--surface-2)] to-[var(--background)] p-12 ">
-            <GlowOrb className="-top-20 -right-20 h-100 w-100 bg-[var(--accent-2)]/30" />
-            <GlowOrb className="-bottom-20 -left-20 h-100 w-100 bg-var(--accent)/25" />
-            <div className="relative mx-auto max-w-3xl text-center">
-              <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                Ready to ship <span className="text-gradient">real AI</span>?
-              </h2>
-              <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
-                Tell us what you're trying to build. We'll come back with an architecture, a plan, and a timeline within 48 hours.
-              </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <CTAButton to="/contact">Book a strategy call</CTAButton>
-                <CTAButton to="/case-studies" variant="ghost">See our work</CTAButton>
-              </div>
-            </div>
+            <button className=" text-white bg-gradient-to-r from-blue-600 to-lime-500 transition-all font-semibold text-lg px-10 py-4 rounded-2xl inline-flex items-center gap-3 group">
+              Get Started Today
+              <span className="group-hover:translate-x-1 transition">→</span>
+            </button>
           </div>
-        </FadeIn>
-      </Section>
-
-      {/* NEWSLETTER */}
-      <Section className="!py-16">
-        <FadeIn>
-          <div className="flex flex-col items-center justify-between gap-6 rounded-2xl border border-white/10 bg-white/[0.03] p-8 sm:flex-row">
-            <div>
-              <p className="font-display text-2xl font-semibold">Field notes from the AI frontier</p>
-              <p className="mt-1 text-sm text-muted-foreground">Monthly briefings on agents, evals, and the systems shipping at the edge.</p>
-            </div>
-            <form className="flex w-full max-w-md gap-2 sm:w-auto" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="you@company.com"
-                className="flex-1 rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm outline-none focus:border-accent/60"
-              />
-              <button className="rounded-xl bg-linear-to-r from-[var(--accent)] to-[var(--accent-2)] px-5 py-3 text-sm font-semibold text-[var(--background)]">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </FadeIn>
-      </Section>
-
-      {/* FINAL VIDEO */}
-      <Section>
-        <FadeIn>
-          <div className="mx-auto max-w-2xl">
-            <VideoCard
-              title="The future of AI"
-              caption="A glimpse into what's next at DOVIX."
-              src={dovix}
-
-              poster="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1200&q=80&auto=format&fit=crop"
-            />
-          </div>
-        </FadeIn>
-      </Section>
-      <Contact />
+        </div>
+      </section>
     </>
   );
 }
 
 // Unused suppression for tree-shaken icons referenced in JSX strings
-void Code2; void Database; void BarChart3;
+void Code2;
+void Database;
+void BarChart3;

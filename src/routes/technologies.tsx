@@ -1,5 +1,36 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, SectionHeading, FadeIn } from "../components/site/primitives";
+import {
+  SiPython,
+  SiDjango,
+  SiFastapi,
+  SiFlask,
+  SiNodedotjs,
+  SiGo,
+  SiReact,
+  SiNextdotjs,
+  SiFlutter,
+  SiOpenai,
+  SiAnthropic,
+  SiGoogle,
+  SiLangchain,
+  SiQdrant,
+  SiPinecone,
+  SiTensorflow,
+  SiPytorch,
+  SiPostgresql,
+  SiMongodb,
+  SiRedis,
+  SiApachekafka,
+  SiRabbitmq,
+  SiAmazon,
+  SiMicrosoftAzure,
+  SiGooglecloud,
+  SiDocker,
+  SiKubernetes,
+  SiTerraform,
+  SiGithubactions,
+} from "react-icons/si";
 
 export const Route = createFileRoute("/technologies")({
   head: () => ({
@@ -14,6 +45,38 @@ export const Route = createFileRoute("/technologies")({
   }),
   component: Technologies,
 });
+
+const iconMap: Record<string, any> = {
+  Python: SiPython,
+  Django: SiDjango,
+  FastAPI: SiFastapi,
+  Flask: SiFlask,
+  "Node.js": SiNodedotjs,
+  Go: SiGo,
+  React: SiReact,
+  "Next.js": SiNextdotjs,
+  Flutter: SiFlutter,
+  OpenAI: SiOpenai,
+  Claude: SiAnthropic,
+  Gemini: SiGoogle,
+  LangChain: SiLangchain,
+  Qdrant: SiQdrant,
+  Pinecone: SiPinecone,
+  TensorFlow: SiTensorflow,
+  PyTorch: SiPytorch,
+  PostgreSQL: SiPostgresql,
+  MongoDB: SiMongodb,
+  Redis: SiRedis,
+  Kafka: SiApachekafka,
+  RabbitMQ: SiRabbitmq,
+  AWS: SiAmazon,
+  Azure: SiMicrosoftAzure,
+  GCP: SiGooglecloud,
+  Docker: SiDocker,
+  Kubernetes: SiKubernetes,
+  Terraform: SiTerraform,
+  "GitHub Actions": SiGithubactions,
+};
 
 const groups = [
   { t: "Languages & Frameworks", items: ["Python", "Django", "FastAPI", "Flask", "Node.js", "Go", "React", "Next.js", "Flutter"] },
@@ -40,14 +103,18 @@ function Technologies() {
             <FadeIn key={g.t} delay={gi * 0.04}>
               <SectionHeading eyebrow={`0${gi + 1}`} title={g.t} />
               <div className="mt-8 flex flex-wrap gap-3">
-                {g.items.map((i) => (
-                  <span
-                    key={i}
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-foreground/85 transition hover:border-accent/40 hover:text-accent"
-                  >
-                    {i}
-                  </span>
-                ))}
+                {g.items.map((i) => {
+                  const Icon = iconMap[i];
+                  return (
+                    <span
+                      key={i}
+                      className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-foreground/85 transition hover:border-accent/40 hover:text-accent flex items-center gap-2"
+                    >
+                      {Icon && <Icon className="h-4 w-4" />}
+                      {i}
+                    </span>
+                  );
+                })}
               </div>
             </FadeIn>
           ))}
