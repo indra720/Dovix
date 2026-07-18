@@ -81,14 +81,14 @@ export function Contact() {
                 <h3 className="font-display text-lg font-semibold">Follow us</h3>
                 <div className="mt-4 grid grid-cols-2  sm:grid-cols-3 gap-2">
                   {[
-                    { I: Linkedin, label: "LinkedIn", href: "#" },
-                    { I: Instagram, label: "Instagram", href: "#" },
+                    { I: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/dovixai" },
+                    { I: Instagram, label: "Instagram", href: "https://instagram.com/dovixai" },
                     { I: Twitter, label: "Twitter / X", href: "#" },
-                    { I: Facebook, label: "Facebook", href: "#" },
-                    { I: Youtube, label: "YouTube", href: "#" },
-                    { I: Github, label: "GitHub", href: "#" },
+                    { I: Facebook, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61590717617219" },
+                    { I: Youtube, label: "YouTube", href: "https://www.youtube.com/channel/UCl5U-IZOQ9wv1DLFCrjQStg" },
+                    
                   ].map(({ I, label, href }) => (
-                    <a key={label} href={href} aria-label={`DOVIX AI on ${label}`} className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-xs transition hover:border-accent/50 hover:text-accent">
+                    <a key={label} href={href} target="_blank" aria-label={`DOVIX AI on ${label}`} className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 text-xs transition hover:border-accent/50 hover:text-accent">
                       <I className="h-4 w-4" /> {label}
                       
                     </a>
@@ -124,7 +124,7 @@ export function Contact() {
         <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {Array.from({ length: 6 }).map((_, i) => (
             <FadeIn key={i} delay={i * 0.04}>
-              <a href="https://instagram.com/dovix.ai" target="_blank" rel="noopener noreferrer" className="group relative block aspect-square overflow-hidden rounded-2xl border border-white/10">
+              <a href="https://instagram.com/dovixai" target="_blank" rel="noopener noreferrer" className="group relative block aspect-square overflow-hidden rounded-2xl border border-white/10">
                 <div
                   className="absolute inset-0 transition group-hover:scale-110"
                   style={{
@@ -145,7 +145,7 @@ export function Contact() {
           ))}
         </div>
         <div className="mt-8 text-center">
-          <a href="https://instagram.com/dovix.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold transition hover:border-accent/50">
+          <a href="https://instagram.com/dovixai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold transition hover:border-accent/50">
             <Instagram className="h-4 w-4" /> Follow @dovix.ai
           </a>
         </div>

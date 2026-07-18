@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Navbar } from "../components/site/Navbar";
 import { Footer } from "../components/site/Footer";
 import { CursorSparks } from "../components/site/CursorSparks";
+import { FloatingButtons } from "../components/site/FloatingButtons";
 
 function NotFoundComponent() {
   return (
@@ -160,6 +161,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="relative overflow-x-clip">
         <CursorSparks />
+        <FloatingButtons />
         <Navbar />
         <main className="relative">
           <Outlet />

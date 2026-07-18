@@ -10,22 +10,25 @@ type NavItem =
 
 const nav: NavItem[] = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/industries", label: "Industries" },
-  { to: "/solutions", label: "Solutions" },
-
-  { to: "/portfolio", label: "Portfolio" },
+  { to: "/about", label: "About Us" },
 
   {
-    label: "Resoureces",
+    label: "Services",
     children: [
-      { to: "/projects", label: "Projects" },
-      { to: "/case-studies", label: "Case Studies" },
+      { to: "/services/ai-development", label: "AI Development" },
+      { to: "/services/ai-agents", label: "AI Agents" },
+      { to: "/services/ai-automation", label: "AI Automation" },
+      { to: "/services/ai-erp-solutions", label: "AI ERP Solutions" },
+      { to: "/services/software-development", label: "Software Development" },
+      { to: "/services/mobile-app-development", label: "Mobile App Development" },
+      { to: "/services/web-development", label: "Web Development" },
+      { to: "/services/ai-digital-marketing", label: "AI Digital Marketing" },
     ],
   },
+
+  { to: "/industries", label: "Industries" },
+  { to: "/solutions", label: "Solutions" },
   { to: "/contact", label: "Contact Us" },
-  // { to: "/careers", label: "Careers" },
 ];
 
 export function Navbar() {
