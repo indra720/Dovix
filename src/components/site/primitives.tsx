@@ -52,8 +52,8 @@ export function SectionHeading({
   );
 }
 
-export function GradientText({ children }: { children: ReactNode }) {
-  return <span className="text-gradient">{children}</span>;
+export function GradientText({ children, className = "" }: { children: ReactNode; className?: string }) {
+  return <span className={`text-gradient ${className}`}>{children}</span>;
 }
 
 export function GlowOrb({ className = "" }: { className?: string }) {

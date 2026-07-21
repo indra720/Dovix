@@ -61,6 +61,7 @@ import { Contact } from "./contact";
 import logoAsset from "@/assets/dovix-logo.asset.json";
 import rightsideimg from "../assets/rightsideimg.png";
 import erp from "../assets/erp.jpg";
+import { PeriodicPopup } from "../components/PeriodicPopup";
 import chat from "../assets/aichat.jpg";
 import eco from "../assets/eco.jpg";
 import mobile from "../assets/mobile.jpg";
@@ -308,7 +309,7 @@ function Home() {
     },
   ];
 
-  const technologies = [
+  const technologies: { image?: string; name: string; icon?: any }[] = [
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", name: "Python" },
     { image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg", name: "TensorFlow" },
     { image: pytorchLogo, name: "PyTorch" },
@@ -352,26 +353,78 @@ function Home() {
         .animate-star-node {
           animation: starDrift 8s ease-in-out infinite;
         }
+        @keyframes waveFlow {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-wave-flow {
+          animation: waveFlow 12s linear infinite;
+        }
       `}} />
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#07111f]">
-        {/* Animated Fog Flow Layers at the bottom of Hero */}
-        <div className="absolute bottom-0 left-0 right-0 h-48 overflow-hidden pointer-events-none z-0 select-none">
-          {/* Layer 1 - Cyan/Blue AI Flow */}
-          <div className="absolute -bottom-24 left-[-50%] w-[200%] h-64 bg-gradient-to-r from-blue-600/10 via-[#429cb3]/15 to-transparent blur-[100px] animate-fog-1"></div>
-          {/* Layer 2 - Lime/Emerald Automation Flow */}
-          <div className="absolute -bottom-24 left-[-50%] w-[200%] h-64 bg-gradient-to-r from-transparent via-lime-500/10 to-emerald-400/5 blur-[110px] animate-fog-2"></div>
-          
-          {/* Floating Star Nodes (Rounded Data Points) */}
-          <div className="absolute inset-x-0 bottom-6 h-24">
-            <div className="absolute left-[10%] bottom-[20%] w-1.5 h-1.5 bg-white/40 rounded-full animate-star-node" style={{ animationDelay: '0s' }}></div>
-            <div className="absolute left-[25%] bottom-[50%] w-2 h-2 bg-[#429cb3]/50 rounded-full animate-star-node" style={{ animationDelay: '1.5s', animationDuration: '10s' }}></div>
-            <div className="absolute left-[40%] bottom-[30%] w-1 h-1 bg-lime-400/40 rounded-full animate-star-node" style={{ animationDelay: '3s', animationDuration: '7s' }}></div>
-            <div className="absolute left-[55%] bottom-[60%] w-2 h-2 bg-white/30 rounded-full animate-star-node" style={{ animationDelay: '0.5s', animationDuration: '12s' }}></div>
-            <div className="absolute left-[70%] bottom-[15%] w-1.5 h-1.5 bg-[#429cb3]/40 rounded-full animate-star-node" style={{ animationDelay: '4s', animationDuration: '9s' }}></div>
-            <div className="absolute left-[85%] bottom-[45%] w-1 h-1 bg-lime-400/50 rounded-full animate-star-node" style={{ animationDelay: '2s', animationDuration: '8s' }}></div>
-            <div className="absolute left-[92%] bottom-[25%] w-2 h-2 bg-white/40 rounded-full animate-star-node" style={{ animationDelay: '5.5s', animationDuration: '11s' }}></div>
+        {/* Animated Flowing Wave Line at the bottom of Hero */}
+
+        <div className="absolute bottom-0 left-0 right-0 h-40 overflow-hidden pointer-events-none z-0 select-none">
+          <svg
+            className="absolute bottom-0 left-0 w-[200%] h-full animate-wave-flow"
+            viewBox="0 0 1440 200"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#2563eb" stopOpacity="0" />
+                <stop offset="25%" stopColor="#429cb3" stopOpacity="0.7" />
+                <stop offset="50%" stopColor="#a3e635" stopOpacity="0.9" />
+                <stop offset="75%" stopColor="#429cb3" stopOpacity="0.7" />
+                <stop offset="100%" stopColor="#2563eb" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#a3e635" stopOpacity="0" />
+                <stop offset="30%" stopColor="#2563eb" stopOpacity="0.5" />
+                <stop offset="60%" stopColor="#429cb3" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#a3e635" stopOpacity="0" />
+              </linearGradient>
+              <filter id="glow1" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            {/* Back wave - subtle */}
+            <path
+              d="M0,170 C120,120 240,120 360,170 C480,220 600,220 720,170
+                 C840,120 960,120 1080,170 C1200,220 1320,220 1440,170
+                 C1560,120 1680,120 1800,170 C1920,220 2040,220 2160,170
+                 C2280,120 2400,120 2520,170 C2640,220 2760,220 2880,170"
+              fill="none"
+              stroke="url(#waveGradient2)"
+              strokeWidth="1.5"
+              filter="url(#glow1)"
+            />
+            {/* Front wave - main glowing flow line */}
+            <path
+              d="M0,150 C120,100 240,100 360,150 C480,200 600,200 720,150
+                 C840,100 960,100 1080,150 C1200,200 1320,200 1440,150
+                 C1560,100 1680,100 1800,150 C1920,200 2040,200 2160,150
+                 C2280,100 2400,100 2520,150 C2640,200 2760,200 2880,150"
+              fill="none"
+              stroke="url(#waveGradient1)"
+              strokeWidth="2.5"
+              filter="url(#glow1)"
+            />
+          </svg>
+          {/* Glowing nodes riding on the wave */}
+          <div className="absolute inset-x-0 bottom-0 h-40">
+            <div className="absolute left-[15%] bottom-[38%] w-2 h-2 bg-[#a3e635] rounded-full blur-[1px] animate-star-node" style={{ animationDelay: '0s' }}></div>
+            <div className="absolute left-[35%] bottom-[18%] w-1.5 h-1.5 bg-[#429cb3] rounded-full blur-[1px] animate-star-node" style={{ animationDelay: '1s', animationDuration: '6s' }}></div>
+            <div className="absolute left-[55%] bottom-[38%] w-2 h-2 bg-white/70 rounded-full blur-[1px] animate-star-node" style={{ animationDelay: '2s', animationDuration: '7s' }}></div>
+            <div className="absolute left-[75%] bottom-[18%] w-1.5 h-1.5 bg-[#a3e635] rounded-full blur-[1px] animate-star-node" style={{ animationDelay: '3s', animationDuration: '8s' }}></div>
+            <div className="absolute left-[92%] bottom-[38%] w-2 h-2 bg-[#429cb3] rounded-full blur-[1px] animate-star-node" style={{ animationDelay: '1.5s', animationDuration: '9s' }}></div>
           </div>
         </div>
 
@@ -532,7 +585,7 @@ function Home() {
               return (
                 <Link
                   key={index}
-                  to={`/services/${serviceSlug}`}
+                  to={(`/services/${serviceSlug}` as any)}
                   className="group bg-[#13213A] hover:bg-[#1A2A4A] border border-white/10 hover:border-[#4A90E2]/30 rounded-2xl p-8 transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="mb-6 flex justify-center items-center text-[#429cb3] w-16 h-20 mx-auto group-hover:scale-110 transition-transform duration-300">
@@ -728,28 +781,28 @@ function Home() {
 
           {/* Technologies Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-8 md:gap-10 items-center justify-items-center">
-            {technologies.map((tech, index) => {
-              const Icon = tech.icon;
-              return (
-                <div
-                  key={index}
-                  className="group flex flex-col items-center justify-center gap-3 hover:scale-110 transition-all duration-300"
-                >
-                  <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center transition-transform group-hover:-rotate-6 l">
-                    {tech.image ? (
-                      <img
-                        src={tech.image}
-                        alt={tech.name}
-                        className="w-full h-full object-contain filter  brightness-90 contrast-125 group-hover:brightness-110 transition-all duration-300"
-                      />
-                    ) : Icon ? (
-                      <Icon className="w-full h-full text-[#429cb3]" />
-                    ) : null}
+              {technologies.map((tech, index) => {
+                const Icon = tech.icon;
+                return (
+                  <div
+                    key={index}
+                    className="group flex flex-col items-center justify-center gap-3 hover:scale-110 transition-all duration-300"
+                  >
+                    <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center transition-transform group-hover:-rotate-6 l">
+                      {tech.image ? (
+                        <img
+                          src={tech.image}
+                          alt={tech.name}
+                          className="w-full h-full object-contain filter  brightness-90 contrast-125 group-hover:brightness-110 transition-all duration-300"
+                        />
+                      ) : Icon ? (
+                        <Icon className="w-full h-full text-[#429cb3]" />
+                      ) : null}
+                    </div>
+                    <p className="text-slate-300 text-[10px] font-medium text-center">{tech.name}</p>
                   </div>
-                  <p className="text-slate-300 text-[10px] font-medium text-center">{tech.name}</p>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         </div>
       </section>

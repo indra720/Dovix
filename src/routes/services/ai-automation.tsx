@@ -10,7 +10,7 @@ import { CheckCircle2, Workflow, Zap, BarChart3, Clock, Target, Cpu, BrainCircui
 
 const ServicePage = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground pt-32 pb-20">
+    <div className="min-h-screen bg-background text-foreground pt-14 md:pt-12 pb-20">
       <Section className="px-6">
         <FadeIn>
           <div className="max-w-4xl mx-auto text-center">

@@ -33,7 +33,24 @@ export function Contact() {
               <h2 className="font-display text-2xl font-bold">Start the conversation</h2>
               <form
                 className="mt-6 grid gap-4 sm:grid-cols-2"
-                onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const formData = new FormData(e.currentTarget);
+                  const name = formData.get("name");
+                  const email = formData.get("email");
+                  const company = formData.get("company");
+                  const phone = formData.get("phone");
+                  const topic = formData.get("topic");
+                  const message = formData.get("message");
+
+                  const subject = encodeURIComponent(`New Inquiry from ${name}`);
+                  const body = encodeURIComponent(
+                    `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nProject Type: ${topic}\n\nMessage:\n${message}`
+                  );
+
+                  window.location.href = `mailto:info@dovix.ai?subject=${subject}&body=${body}`;
+                  setSent(true);
+                }}
               >
                 <Field label="Full name" name="name" required />
                 <Field label="Work email" name="email" type="email" required />

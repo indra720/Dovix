@@ -17,13 +17,14 @@ const quickLinks = [
 ];
 
 const servicesLinks = [
-  { to: "/services", label: "AI Development" },
-  { to: "/services", label: "AI Agents" },
-  { to: "/services", label: "AI Automation" },
-  { to: "/services", label: "AI ERP Solutions" },
-  { to: "/services", label: "Web Development" },
-  { to: "/services", label: "AI Digital Marketing" },
-  { to: "/services", label: "IT Consulting" },
+  { to: "/services/ai-development", label: "AI Development" },
+  { to: "/services/ai-agents", label: "AI Agents" },
+  { to: "/services/ai-automation", label: "AI Automation" },
+  { to: "/services/ai-erp-solutions", label: "AI ERP Solutions" },
+  { to: "/services/software-development", label: "Software Development" },
+  { to: "/services/mobile-app-development", label: "Mobile App Development" },
+  { to: "/services/web-development", label: "Web Development" },
+  { to: "/services/ai-digital-marketing", label: "AI Digital Marketing" },
 ];
 
 export function Footer() {
@@ -33,8 +34,8 @@ export function Footer() {
         {/* Logo + About */}
         <div className="md:col-span-4">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="DOVIX AI" className="h-10 w-auto" />
-            <span className="text-2xl font-bold text-white tracking-tight">DOVIX AI</span>
+            <img src={logo} alt="DOVIX AI" className="h-20 w-30" />
+            
           </div>
 
           <p className="mt-6 text-slate-400 leading-relaxed text-[15px]">
@@ -45,18 +46,36 @@ export function Footer() {
 
           {/* Social Icons */}
           <div className="flex gap-5 mt-8">
-            <Link to="https://www.linkedin.com/company/dovixai" target="_Blank" className="text-slate-400 hover:text-white text-xl">
+            <a
+              href="https://www.linkedin.com/company/dovixai"
+              target="_Blank"
+              className="text-slate-400 hover:text-white text-xl"
+            >
               <FaLinkedin />
-            </Link>
-            <Link to="https://www.facebook.com/profile.php?id=61590717617219" target="_Blank" className="text-slate-400 hover:text-white text-xl">
+            </a>
+           
+            <a
+              href="https://www.facebook.com/profile.php?id=61590717617219"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-white text-xl"
+            >
               <FaFacebook />
-            </Link>
-            <Link to="https://instagram.com/dovixai" target="_Blank" className="text-slate-400 hover:text-white text-xl">
+            </a>
+            <a
+              href="https://instagram.com/dovixai"
+              target="_Blank"
+              className="text-slate-400 hover:text-white text-xl"
+            >
               <FaInstagram />
-            </Link>
-            <Link to="https://www.youtube.com/channel/UCl5U-IZOQ9wv1DLFCrjQStg" target="_Blank" className="text-slate-400 hover:text-white text-xl">
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCl5U-IZOQ9wv1DLFCrjQStg"
+              target="_Blank"
+              className="text-slate-400 hover:text-white text-xl"
+            >
               <FaYoutube />
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -94,18 +113,17 @@ export function Footer() {
           <div className="space-y-4 text-sm text-slate-400">
             <div className="flex items-center gap-3">
               <span>📞</span>
-              <Link to="tel:+919116382399" className="hover:text-white">
+              <a href="tel:+919116382399" className="hover:text-white">
                 +91 91163 82399
-              </Link>
+              </a>
             </div>
             <div className="flex items-center gap-3">
               <span>✉️</span>
-              <Link to="mailto:info@dovix.ai" className="hover:text-white">
+              <a href="mailto:info@dovix.ai" className="hover:text-white">
                 info@dovix.ai
-              </Link>
+              </a>
             </div>
             <div className="leading-relaxed">
-             
               <p className="mt-2 text-sm ">
                 Registered Office :-B-18, 2nd Floor, Shiv Marg, Bani Park,
                 <br />

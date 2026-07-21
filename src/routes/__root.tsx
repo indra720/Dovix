@@ -15,6 +15,7 @@ import { Navbar } from "../components/site/Navbar";
 import { Footer } from "../components/site/Footer";
 import { CursorSparks } from "../components/site/CursorSparks";
 import { FloatingButtons } from "../components/site/FloatingButtons";
+import { PeriodicPopup } from "../components/PeriodicPopup";
 
 function NotFoundComponent() {
   return (
@@ -162,6 +163,7 @@ function RootComponent() {
       <div className="relative overflow-x-clip">
         <CursorSparks />
         <FloatingButtons />
+        <PeriodicPopup />
         <Navbar />
         <main className="relative">
           <Outlet />

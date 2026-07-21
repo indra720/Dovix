@@ -82,7 +82,7 @@ export function Navbar() {
             <img
               src={logo}
               alt="DOVIX AI"
-              className="h-16 sm:h-24 w-20 sm:w-40 drop-shadow-[0_0_22px_rgba(0,245,255,0.35)] "
+              className="h-16 sm:h-20 w-20 sm:w-30 drop-shadow-[0_0_22px_rgba(0,245,255,0.35)] "
             />
             <span className="sr-only">DOVIX AI</span>
           </Link>
