@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as TechnologiesRouteImport } from './routes/technologies'
 import { Route as SolutionsRouteImport } from './routes/solutions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SitemapRouteImport } from './routes/sitemap'
@@ -43,11 +42,6 @@ import { Route as ServicesAiAgentsRouteImport } from './routes/services/ai-agent
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TechnologiesRoute = TechnologiesRouteImport.update({
-  id: '/technologies',
-  path: '/technologies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SolutionsRoute = SolutionsRouteImport.update({
@@ -214,7 +208,6 @@ export interface FileRoutesByFullPath {
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
-  '/technologies': typeof TechnologiesRoute
   '/terms': typeof TermsRoute
   '/services/ai-agents': typeof ServicesAiAgentsRoute
   '/services/ai-automation': typeof ServicesAiAutomationRoute
@@ -245,7 +238,6 @@ export interface FileRoutesByTo {
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
-  '/technologies': typeof TechnologiesRoute
   '/terms': typeof TermsRoute
   '/services/ai-agents': typeof ServicesAiAgentsRoute
   '/services/ai-automation': typeof ServicesAiAutomationRoute
@@ -278,7 +270,6 @@ export interface FileRoutesById {
   '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions': typeof SolutionsRoute
-  '/technologies': typeof TechnologiesRoute
   '/terms': typeof TermsRoute
   '/services/ai-agents': typeof ServicesAiAgentsRoute
   '/services/ai-automation': typeof ServicesAiAutomationRoute
@@ -312,7 +303,6 @@ export interface FileRouteTypes {
     | '/sitemap'
     | '/sitemap.xml'
     | '/solutions'
-    | '/technologies'
     | '/terms'
     | '/services/ai-agents'
     | '/services/ai-automation'
@@ -343,7 +333,6 @@ export interface FileRouteTypes {
     | '/sitemap'
     | '/sitemap.xml'
     | '/solutions'
-    | '/technologies'
     | '/terms'
     | '/services/ai-agents'
     | '/services/ai-automation'
@@ -375,7 +364,6 @@ export interface FileRouteTypes {
     | '/sitemap'
     | '/sitemap.xml'
     | '/solutions'
-    | '/technologies'
     | '/terms'
     | '/services/ai-agents'
     | '/services/ai-automation'
@@ -408,7 +396,6 @@ export interface RootRouteChildren {
   SitemapRoute: typeof SitemapRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsRoute: typeof SolutionsRoute
-  TechnologiesRoute: typeof TechnologiesRoute
   TermsRoute: typeof TermsRoute
 }
 
@@ -419,13 +406,6 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/technologies': {
-      id: '/technologies'
-      path: '/technologies'
-      fullPath: '/technologies'
-      preLoaderRoute: typeof TechnologiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/solutions': {
@@ -675,7 +655,6 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapRoute: SitemapRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsRoute: SolutionsRoute,
-  TechnologiesRoute: TechnologiesRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
